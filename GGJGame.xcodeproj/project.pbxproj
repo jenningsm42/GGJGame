@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F14E70EF1C5B4A13009A4D6C /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = F14E70EE1C5B4A13009A4D6C /* ResourcePath.mm */; };
+		F14E70EF1C5B4A13009A4D6C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E70F11C5B4A13009A4D6C /* main.cpp */; };
-		F14E70F51C5B4A13009A4D6C /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F14E70F41C5B4A13009A4D6C /* cute_image.jpg */; };
-		F14E70F71C5B4A13009A4D6C /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = F14E70F61C5B4A13009A4D6C /* nice_music.ogg */; };
-		F14E70F91C5B4A13009A4D6C /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F14E70F81C5B4A13009A4D6C /* sansation.ttf */; };
-		F14E70FB1C5B4A13009A4D6C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F14E70FA1C5B4A13009A4D6C /* icon.png */; };
+		F14E71091C5B625E009A4D6C /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71011C5B625E009A4D6C /* Application.cpp */; };
+		F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71031C5B625E009A4D6C /* Game.cpp */; };
+		F14E710B1C5B625E009A4D6C /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71061C5B625E009A4D6C /* Player.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F14E70E91C5B4A13009A4D6C /* GGJGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGJGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14E70ED1C5B4A13009A4D6C /* GGJGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GGJGame-Info.plist"; sourceTree = "<group>"; };
 		F14E70F11C5B4A13009A4D6C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F14E71011C5B625E009A4D6C /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		F14E71021C5B625E009A4D6C /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		F14E71031C5B625E009A4D6C /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		F14E71041C5B625E009A4D6C /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		F14E71051C5B625E009A4D6C /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		F14E71061C5B625E009A4D6C /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		F14E71071C5B625E009A4D6C /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		F14E71081C5B625E009A4D6C /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,15 @@
 		F14E70EB1C5B4A13009A4D6C /* GGJGame */ = {
 			isa = PBXGroup;
 			children = (
+				F14E71011C5B625E009A4D6C /* Application.cpp */,
+				F14E71021C5B625E009A4D6C /* Application.h */,
+				F14E71031C5B625E009A4D6C /* Game.cpp */,
+				F14E71041C5B625E009A4D6C /* Game.h */,
+				F14E71051C5B625E009A4D6C /* GameObject.h */,
+				F14E71061C5B625E009A4D6C /* Player.cpp */,
+				F14E71071C5B625E009A4D6C /* Player.h */,
+				F14E71081C5B625E009A4D6C /* State.h */,
 				F14E70F11C5B4A13009A4D6C /* main.cpp */,
-				F14E70F31C5B4A13009A4D6C /* Resources */,
 				F14E70EC1C5B4A13009A4D6C /* Supporting Files */,
 			);
 			path = GGJGame;
@@ -64,13 +78,6 @@
 				F14E70ED1C5B4A13009A4D6C /* GGJGame-Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F14E70F31C5B4A13009A4D6C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */,
-				F14E70EF1C5B4A13009A4D6C /* ResourcePath.mm in Sources */,
+				F14E70EF1C5B4A13009A4D6C /* (null) in Sources */,
+				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
+				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
+				F14E710B1C5B625E009A4D6C /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +304,7 @@
 				F14E71001C5B4A13009A4D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
