@@ -6,11 +6,11 @@ class Application;
 class GameObject
 {
 public:
-	virtual void initialize() = 0;
-	virtual void release() = 0;
+    virtual void initialize() {}
+    virtual void release() {}
 
-	virtual void update(float dt, Application*) = 0;
-	virtual void draw(sf::RenderWindow&) = 0;
+    virtual void update(float dt) {}
+    virtual void draw(sf::RenderWindow&) {}
 
 protected:
 	sf::Texture m_texture;

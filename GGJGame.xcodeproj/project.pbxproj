@@ -11,8 +11,9 @@
 		F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E70F11C5B4A13009A4D6C /* main.cpp */; };
 		F14E71091C5B625E009A4D6C /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71011C5B625E009A4D6C /* Application.cpp */; };
 		F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71031C5B625E009A4D6C /* Game.cpp */; };
-		F14E710B1C5B625E009A4D6C /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71061C5B625E009A4D6C /* Player.cpp */; };
 		F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E1C1C5C78B200FA43FA /* Map.cpp */; };
+		F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E221C5C9E7100FA43FA /* Worker.cpp */; };
+		F1CC0E271C5CA69C00FA43FA /* WorkerPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E251C5CA69C00FA43FA /* WorkerPool.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +25,13 @@
 		F14E71031C5B625E009A4D6C /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		F14E71041C5B625E009A4D6C /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		F14E71051C5B625E009A4D6C /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
-		F14E71061C5B625E009A4D6C /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		F14E71071C5B625E009A4D6C /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		F14E71081C5B625E009A4D6C /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
 		F1CC0E1C1C5C78B200FA43FA /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		F1CC0E1D1C5C78B200FA43FA /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		F1CC0E221C5C9E7100FA43FA /* Worker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Worker.cpp; sourceTree = "<group>"; };
+		F1CC0E231C5C9E7100FA43FA /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
+		F1CC0E251C5CA69C00FA43FA /* WorkerPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkerPool.cpp; sourceTree = "<group>"; };
+		F1CC0E261C5CA69C00FA43FA /* WorkerPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkerPool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +69,15 @@
 				F14E71031C5B625E009A4D6C /* Game.cpp */,
 				F14E71041C5B625E009A4D6C /* Game.h */,
 				F14E71051C5B625E009A4D6C /* GameObject.h */,
-				F14E71061C5B625E009A4D6C /* Player.cpp */,
-				F14E71071C5B625E009A4D6C /* Player.h */,
 				F14E71081C5B625E009A4D6C /* State.h */,
 				F14E70F11C5B4A13009A4D6C /* main.cpp */,
 				F14E70EC1C5B4A13009A4D6C /* Supporting Files */,
 				F1CC0E1C1C5C78B200FA43FA /* Map.cpp */,
 				F1CC0E1D1C5C78B200FA43FA /* Map.h */,
+				F1CC0E221C5C9E7100FA43FA /* Worker.cpp */,
+				F1CC0E231C5C9E7100FA43FA /* Worker.h */,
+				F1CC0E251C5CA69C00FA43FA /* WorkerPool.cpp */,
+				F1CC0E261C5CA69C00FA43FA /* WorkerPool.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -170,9 +175,10 @@
 				F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */,
 				F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */,
 				F14E70EF1C5B4A13009A4D6C /* (null) in Sources */,
+				F1CC0E271C5CA69C00FA43FA /* WorkerPool.cpp in Sources */,
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
 				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
-				F14E710B1C5B625E009A4D6C /* Player.cpp in Sources */,
+				F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

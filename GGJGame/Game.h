@@ -3,6 +3,8 @@
 #include "State.h"
 #include "Map.h"
 #include "Ritual.h"
+#include "Worker.h"
+
 
 class Game : public State
 {
@@ -18,6 +20,8 @@ public:
 
 private:
     Map m_map;
+    Worker m_workers[10];
+    int m_workerCount;
 };
 
 #endif // GAME_H
