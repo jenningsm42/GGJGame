@@ -4,7 +4,6 @@
 
 EnemyPool::EnemyPool()
 {
-	
 }
 
 EnemyPool::~EnemyPool()
@@ -14,7 +13,6 @@ EnemyPool::~EnemyPool()
 void EnemyPool::initialize(Map &)
 {
 	m_texture.loadFromFile("data/enemy.png");
-
 }
 
 void EnemyPool::update(float dt, Application *app, Map &map)
