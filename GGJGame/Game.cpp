@@ -47,6 +47,7 @@ void Game::update(float dt, Application* app)
     if(view->getCenter().y > m_map.getHeight() - app->getHeight() / 2)
         view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2);
     
+    m_ritual.update(dt);
 	m_enemyPool.update(dt, app, m_map);
     m_workerPool.update(dt, app, m_map);
 
