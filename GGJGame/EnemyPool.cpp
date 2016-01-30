@@ -28,8 +28,12 @@ void EnemyPool::update(float dt, Application *app, Map &map)
 
 	for (int i = 0; i < enemies.size(); i++) {
 		enemies[i].update(dt, map);
+        if(enemies[i].getHealth() <= 0)
+        {
+            enemies[i].release();
+            enemies.erase(enemies.begin() + i);
+        }
 	}
-
 }
 
 void EnemyPool::draw(sf::RenderWindow &window)

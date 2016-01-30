@@ -1,10 +1,8 @@
 #include "Enemy.h"
 #include <random>
 
-
-Enemy::Enemy()
+Enemy::Enemy() : health(1)
 {
-
 }
 
 Enemy::~Enemy()
@@ -43,6 +41,16 @@ void Enemy::update(float dt, Map &map)
 void Enemy::draw(sf::RenderWindow &window)
 {
 	window.draw(m_sprite);
+}
+
+void Enemy::damage()
+{
+    health--;
+}
+
+int Enemy::getHealth()
+{
+    return health;
 }
 
 const sf::FloatRect Enemy::getBounds() const

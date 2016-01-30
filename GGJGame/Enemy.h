@@ -15,9 +15,15 @@ public:
 
 	void update(float dt, Map &map);
 	void draw(sf::RenderWindow&) override;
+    
+    void damage();
+    int getHealth();
 
 	const sf::FloatRect getBounds() const;
 	const sf::Vector2f getCenter() const;
+    
+private:
+    int health;
 };
 
 #endif // ENEMY_H
