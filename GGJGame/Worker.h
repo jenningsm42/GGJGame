@@ -12,7 +12,7 @@ public:
     void initialize(Map& map);
     void release() override;
     
-    void update(float dt, Application*) override;
+    void update(float dt);
     void draw(sf::RenderWindow&) override;
 };
 

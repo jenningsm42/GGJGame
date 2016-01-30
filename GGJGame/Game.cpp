@@ -13,15 +13,11 @@ void Game::initialize(Application* app)
 {
     app->getView()->setCenter(m_map.getWidth() / 2, m_map.getHeight() / 2);
     
-    m_workerCount = 5;
-    for(int i = 0; i < m_workerCount; i++)
-        m_workers[i].initialize(m_map);
+    m_workerPool.initialize(m_map);
 }
 
 void Game::release()
 {
-    for(int i = 0; i < m_workerCount; i++)
-        m_workers[i].release();
 }
 
 void Game::update(float dt, Application* app)
@@ -49,14 +45,13 @@ void Game::update(float dt, Application* app)
     if(view->getCenter().y > m_map.getHeight() - app->getHeight() / 2 - 18)
         view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2 - 18);
     
-    for(int i = 0; i < m_workerCount; i++)
-        m_workers[i].update(dt, app);
+    m_workerPool.update(dt);
 }
 
 void Game::draw(sf::RenderWindow& window)
 {
 	m_map.draw(window);
 	m_ritual.draw(window);
-    for(int i = 0; i < m_workerCount; i++)
-        m_workers[i].draw(window);
+    m_workerPool.draw(window);
+
 }

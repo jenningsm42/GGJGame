@@ -28,7 +28,7 @@ void Worker::release()
 {
 }
 
-void Worker::update(float dt, Application* app)
+void Worker::update(float dt)
 {
 }
 
