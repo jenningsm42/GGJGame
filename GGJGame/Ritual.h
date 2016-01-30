@@ -15,7 +15,7 @@ public:
 
 	virtual void release() override;
 
-	virtual void update(float dt, Application *) override;
+	virtual void update(float dt) override;
 
 	virtual void draw(sf::RenderWindow &) override;
 	

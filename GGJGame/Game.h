@@ -5,7 +5,6 @@
 #include "Ritual.h"
 #include "WorkerPool.h"
 
-
 class Game : public State
 {
 public:
@@ -22,7 +21,6 @@ private:
     Map m_map;
 	Ritual m_ritual;
     WorkerPool m_workerPool;
-
 };
 
 #endif // GAME_H

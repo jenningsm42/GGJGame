@@ -18,6 +18,9 @@ public:
 private:
     Worker m_workers[10];
     int m_workerCount;
+    int m_selectedWorker;
+    sf::Texture m_selectedTexture;
+    sf::Sprite m_selectedSprite;
 };
 
 #endif // WORKERPOOL_H
