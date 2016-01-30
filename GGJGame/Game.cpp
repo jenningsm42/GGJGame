@@ -12,7 +12,7 @@ Game::~Game()
 void Game::initialize(Application* app)
 {
     app->getView()->setCenter(m_map.getWidth() / 2, m_map.getHeight() / 2);
-    
+	m_ritual.initialize(m_map);
     m_workerPool.initialize(m_map);
 }
 
