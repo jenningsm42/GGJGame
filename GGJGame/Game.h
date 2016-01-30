@@ -9,7 +9,7 @@ public:
 	Game();
 	~Game();
 
-	void initialize() override;
+	void initialize(Application*) override;
 	void release() override;
 
 	void update(float dt, Application*) override;

@@ -2,13 +2,13 @@
 
 Application::Application(State* state) : m_running(true), m_focused(true)
 {
-	setState(state);
-    
     m_width = sf::VideoMode::getDesktopMode().width;
     m_height = sf::VideoMode::getDesktopMode().height;
     
     m_window.create(sf::VideoMode::getDesktopMode(), "GGJGame", sf::Style::Fullscreen);
     m_view.reset(sf::FloatRect(0, 0, m_width, m_height));
+    
+    setState(state);
 }
 
 Application::~Application()
@@ -26,7 +26,10 @@ void Application::setState(State* state)
 
 	m_curState = state;
 	if(m_curState != nullptr)
-		m_curState->initialize();
+    {
+		m_curState->initialize(this);
+        m_window.setView(m_view);
+    }
 }
 
 bool Application::isRunning()
@@ -68,6 +71,16 @@ void Application::update()
     }
 
 	elapsedTime = clock.restart();
+}
+
+int Application::getWidth()
+{
+    return m_width;
+}
+
+int Application::getHeight()
+{
+    return m_height;
 }
 
 sf::View* Application::getView()

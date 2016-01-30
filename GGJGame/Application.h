@@ -13,6 +13,9 @@ public:
 	bool isRunning();
 	void update();
     
+    int getWidth();
+    int getHeight();
+    
     sf::View* getView();
 
 private:

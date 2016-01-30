@@ -23,7 +23,6 @@ Map::~Map()
 
 void Map::draw(sf::RenderWindow& window)
 {
-    
     for(int y = 0; y < m_mapHeight; y++)
     {
         for(int x = 0; x < m_mapWidth; x++)
@@ -33,4 +32,14 @@ void Map::draw(sf::RenderWindow& window)
             window.draw(m_tileSprite);
         }
     }
+}
+
+int Map::getWidth()
+{
+    return m_mapWidth * m_tileTexture.getSize().x;
+}
+
+int Map::getHeight()
+{
+    return m_mapHeight * 54 + 18;
 }

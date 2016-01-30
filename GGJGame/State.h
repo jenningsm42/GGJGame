@@ -6,7 +6,9 @@ class Application;
 class State
 {
 public:
-	virtual void initialize() = 0;
+    virtual ~State() {}
+    
+	virtual void initialize(Application*) = 0;
 	virtual void release() = 0;
 
 	virtual void update(float dt, Application*) = 0;

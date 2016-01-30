@@ -13,7 +13,6 @@
 		F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71031C5B625E009A4D6C /* Game.cpp */; };
 		F14E710B1C5B625E009A4D6C /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14E71061C5B625E009A4D6C /* Player.cpp */; };
 		F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E1C1C5C78B200FA43FA /* Map.cpp */; };
-		F1CC0E211C5C88EC00FA43FA /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E1F1C5C88EC00FA43FA /* Camera.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +29,6 @@
 		F14E71081C5B625E009A4D6C /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
 		F1CC0E1C1C5C78B200FA43FA /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		F1CC0E1D1C5C78B200FA43FA /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
-		F1CC0E1F1C5C88EC00FA43FA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
-		F1CC0E201C5C88EC00FA43FA /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +73,6 @@
 				F14E70EC1C5B4A13009A4D6C /* Supporting Files */,
 				F1CC0E1C1C5C78B200FA43FA /* Map.cpp */,
 				F1CC0E1D1C5C78B200FA43FA /* Map.h */,
-				F1CC0E1F1C5C88EC00FA43FA /* Camera.cpp */,
-				F1CC0E201C5C88EC00FA43FA /* Camera.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -174,7 +169,6 @@
 			files = (
 				F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */,
 				F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */,
-				F1CC0E211C5C88EC00FA43FA /* Camera.cpp in Sources */,
 				F14E70EF1C5B4A13009A4D6C /* (null) in Sources */,
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
 				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
