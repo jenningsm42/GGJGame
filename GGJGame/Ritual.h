@@ -22,11 +22,12 @@ public:
 private:
 
 	sf::Texture m_personTexture[5];
-	sf::Sprite m_personSprite;
+	sf::Sprite m_personSprite[5];
 	sf::Texture m_fireTexture;
 	sf::Sprite m_fireSprite;
 	int getXLoc(int n);
-	const int personNumber = 5;
+	int getYloc(int n);
+	const int radius = 100;
 };
 
 
