@@ -9,6 +9,13 @@ Projectile::Projectile(sf::Texture& texture, sf::Vector2f spawn, Enemy* target) 
     m_sprite.setPosition(spawn);
 }
 
+Projectile::Projectile(const Projectile& other)
+{
+    m_speed = other.m_speed;
+    m_sprite = other.m_sprite;
+    m_target = other.m_target;
+}
+
 Projectile::~Projectile()
 {
 }
@@ -45,4 +52,11 @@ const sf::FloatRect Projectile::getBounds() const
 const sf::Vector2f Projectile::getCenter() const
 {
     return m_sprite.getPosition() + 0.5f * sf::Vector2f(m_sprite.getLocalBounds().width, m_sprite.getLocalBounds().height);
+}
+
+Projectile& Projectile::operator=(const Projectile& other)
+{
+    m_speed = other.m_speed;
+    m_sprite = other.m_sprite;
+    m_target = other.m_target;
 }

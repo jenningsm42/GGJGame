@@ -7,6 +7,7 @@ class Projectile
 {
 public:
     Projectile(sf::Texture&, sf::Vector2f spawn, Enemy* target);
+    Projectile(const Projectile&);
     ~Projectile();
     
     bool update(float dt);
@@ -14,10 +15,12 @@ public:
     const sf::FloatRect getBounds() const;
     const sf::Vector2f getCenter() const;
     
+    Projectile& operator=(const Projectile&);
+    
 private:
     sf::Sprite m_sprite;
     Enemy* m_target;
-    const float m_speed;
+    float m_speed;
 };
 
 #endif // PROJECTILE_H

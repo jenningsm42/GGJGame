@@ -5,6 +5,13 @@ Enemy::Enemy() : m_speed(45), m_health(1)
 {
 }
 
+Enemy::Enemy(const Enemy& other)
+{
+    m_sprite = other.m_sprite;
+    m_speed = other.m_speed;
+    m_health = other.m_health;
+}
+
 Enemy::~Enemy()
 {
 }
@@ -60,4 +67,11 @@ const sf::FloatRect Enemy::getBounds() const
 const sf::Vector2f Enemy::getCenter() const
 {
 	return m_sprite.getPosition() + 0.5f * sf::Vector2f(m_sprite.getLocalBounds().width, m_sprite.getLocalBounds().height);
+}
+
+Enemy& Enemy::operator=(const Enemy& other)
+{
+    m_sprite = other.m_sprite;
+    m_speed = other.m_speed;
+    m_health = other.m_health;
 }
