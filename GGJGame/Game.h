@@ -2,6 +2,7 @@
 #define GAME_H
 #include "State.h"
 #include "Map.h"
+#include "Ritual.h"
 
 class Game : public State
 {

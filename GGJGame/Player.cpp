@@ -19,7 +19,6 @@ void Player::update(float dt, Application* app)
 		m_sprite.move(sf::Vector2f(m_speed * dt, 0));
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		m_sprite.move(sf::Vector2f(-m_speed * dt, 0));
-
 	if (m_sprite.getPosition().x < 0)
 		m_sprite.setPosition(0, m_sprite.getPosition().y);
 	if (m_sprite.getPosition().x + m_sprite.getLocalBounds().width > 800)
