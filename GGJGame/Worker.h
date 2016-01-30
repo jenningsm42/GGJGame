@@ -2,6 +2,7 @@
 #define WORKER_H
 #include "GameObject.h"
 #include "Map.h"
+#include "Command.h"
 
 class Worker : public GameObject
 {
@@ -17,6 +18,12 @@ public:
     
     const sf::FloatRect getBounds() const;
     const sf::Vector2f getCenter() const;
+    
+    void setCommand(Command&);
+    
+private:
+    Command m_curCommand;
+    const float m_speed;
 };
 
 #endif // WORKER_H

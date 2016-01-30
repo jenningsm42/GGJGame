@@ -34,6 +34,20 @@ void WorkerPool::update(float dt, Application* app)
         }
     }
     
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Right) && m_selectedWorker != -1)
+    {
+        sf::Vector2i mpos = sf::Mouse::getPosition();
+        mpos.x += app->getView()->getCenter().x - app->getWidth() / 2;
+        mpos.y += app->getView()->getCenter().y - app->getHeight() / 2;
+        
+        Command c;
+        c.commandType = CommandType::Move;
+        c.x = mpos.x;
+        c.y = mpos.y;
+        
+        m_workers[m_selectedWorker].setCommand(c);
+    }
+    
     for(int i = 0; i < m_workerCount; i++)
     {
         m_workers[i].update(dt);

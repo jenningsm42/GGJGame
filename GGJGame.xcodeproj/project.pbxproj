@@ -35,6 +35,7 @@
 		F1CC0E261C5CA69C00FA43FA /* WorkerPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkerPool.h; sourceTree = "<group>"; };
 		F1CC0E281C5CB94B00FA43FA /* Ritual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ritual.cpp; sourceTree = "<group>"; };
 		F1CC0E291C5CB94B00FA43FA /* Ritual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ritual.h; sourceTree = "<group>"; };
+		F1CC0E2B1C5CBE3E00FA43FA /* Command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 				F1CC0E231C5C9E7100FA43FA /* Worker.h */,
 				F1CC0E251C5CA69C00FA43FA /* WorkerPool.cpp */,
 				F1CC0E261C5CA69C00FA43FA /* WorkerPool.h */,
+				F1CC0E2B1C5CBE3E00FA43FA /* Command.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
