@@ -9,7 +9,7 @@ public:
     virtual void initialize() {}
     virtual void release() {}
 
-    virtual void update(float dt, Application*) {}
+    virtual void update(float dt) {}
     virtual void draw(sf::RenderWindow&) {}
 
 protected:
