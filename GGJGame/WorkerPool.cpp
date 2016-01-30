@@ -17,7 +17,7 @@ void WorkerPool::initialize(Map& map)
 void WorkerPool::update(float dt)
 {
     for(int i = 0; i < m_workerCount; i++)
-        m_workers[i].update(dt);//, <#Application *#>)
+        m_workers[i].update(dt);
 }
 
 void WorkerPool::draw(sf::RenderWindow& window)

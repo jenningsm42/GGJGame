@@ -2,9 +2,7 @@
 #define GAME_H
 #include "State.h"
 #include "Map.h"
-#include "Ritual.h"
-#include "Worker.h"
-
+#include "WorkerPool.h"
 
 class Game : public State
 {
@@ -20,8 +18,7 @@ public:
 
 private:
     Map m_map;
-    Worker m_workers[10];
-    int m_workerCount;
+    WorkerPool m_workerPool;
 };
 
 #endif // GAME_H
