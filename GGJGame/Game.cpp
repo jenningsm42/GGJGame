@@ -13,8 +13,9 @@ void Game::initialize(Application* app)
 {
     app->getView()->setCenter(m_map.getWidth() / 2, m_map.getHeight() / 2);
 	m_ritual.initialize(m_map);
-    m_workerPool.initialize(m_map);
 	m_enemyPool.initialize(m_map);
+    m_workerPool.initialize(m_map, app);
+
 }
 
 void Game::release()
@@ -37,17 +38,18 @@ void Game::update(float dt, Application* app)
     if(mpos.y > app->getHeight() - 100)
         view->move(0, scrollSpeed * float(100 - app->getHeight() + mpos.y) / 100.f * dt);
     
-    if(view->getCenter().x < app->getWidth() / 2 + 32)
-        view->setCenter(app->getWidth() / 2 + 32, view->getCenter().y);
-    if(view->getCenter().x > m_map.getWidth() - app->getWidth() / 2 - 32)
-        view->setCenter(m_map.getWidth() - app->getWidth() / 2 - 32, view->getCenter().y);
-    if(view->getCenter().y < app->getHeight() / 2 + 18)
-        view->setCenter(view->getCenter().x, app->getHeight() / 2 + 18);
-    if(view->getCenter().y > m_map.getHeight() - app->getHeight() / 2 - 18)
-        view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2 - 18);
+    if(view->getCenter().x < app->getWidth() / 2)
+        view->setCenter(app->getWidth() / 2, view->getCenter().y);
+    if(view->getCenter().x > m_map.getWidth() - app->getWidth() / 2)
+        view->setCenter(m_map.getWidth() - app->getWidth() / 2, view->getCenter().y);
+    if(view->getCenter().y < app->getHeight() / 2)
+        view->setCenter(view->getCenter().x, app->getHeight() / 2);
+    if(view->getCenter().y > m_map.getHeight() - app->getHeight() / 2)
+        view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2);
     
-    m_workerPool.update(dt, app);
 	m_enemyPool.update(dt, app, m_map);
+    m_workerPool.update(dt, app, m_map);
+
 }
 
 void Game::draw(sf::RenderWindow& window)
@@ -56,4 +58,5 @@ void Game::draw(sf::RenderWindow& window)
 	m_ritual.draw(window);
     m_workerPool.draw(window);
 	m_enemyPool.draw(window);
+
 }

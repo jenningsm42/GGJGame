@@ -1,8 +1,9 @@
 #include "Worker.h"
 #include <random>
 
-Worker::Worker()
+Worker::Worker() : m_speed(200.f)
 {
+    m_curCommand.commandType = CommandType::None;
 }
 
 Worker::~Worker()
@@ -21,7 +22,9 @@ void Worker::initialize(Map& map)
     
     int length = distLength(rng);
     float angle = distAngle(rng);
-    m_sprite.setPosition(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
+    sf::Vector2f pos = sf::Vector2f(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
+    pos = map.convertToCellCoordinates(pos.x, pos.y);
+    m_sprite.setPosition(pos.x - m_sprite.getLocalBounds().width / 2, pos.y - m_sprite.getLocalBounds().height + 20);
 }
 
 void Worker::release()
@@ -30,6 +33,27 @@ void Worker::release()
 
 void Worker::update(float dt)
 {
+    switch(m_curCommand.commandType)
+    {
+        case CommandType::Move:
+        {
+            float dx = m_curCommand.x - getCenter().x;
+            float dy = m_curCommand.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
+            
+            if(fabsf(dx) < 5.f && fabsf(dy) < 5.f)
+            {
+                m_curCommand.commandType = CommandType::None;
+                break;
+            }
+            
+            float angle = atan2f(dy, dx);
+            m_sprite.move(m_speed * cosf(angle) * dt, m_speed * sinf(angle) * dt);
+        } break;
+        case CommandType::Place:
+        {
+        } break;
+        default: break;
+    }
 }
 
 void Worker::draw(sf::RenderWindow& window)
@@ -45,4 +69,9 @@ const sf::FloatRect Worker::getBounds() const
 const sf::Vector2f Worker::getCenter() const
 {
     return m_sprite.getPosition() + 0.5f * sf::Vector2f(m_sprite.getLocalBounds().width, m_sprite.getLocalBounds().height);
+}
+
+void Worker::setCommand(Command& command)
+{
+    m_curCommand = command;
 }

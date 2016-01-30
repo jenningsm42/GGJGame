@@ -3,7 +3,7 @@
 
 Map::Map()
 {
-    m_tileTexture.loadFromFile("data/64x72.png");
+    m_tileTexture.loadFromFile("data/cell.png");
     m_tileSprite.setTexture(m_tileTexture);
     
     std::random_device rd;
@@ -13,7 +13,7 @@ Map::Map()
     for(int i = 0; i < m_mapWidth * m_mapHeight; i++)
     {
         double rand = dist(rng);
-        m_colors[i] = sf::Color(rand * 40 + 25, rand * 40 + 60, rand * 20 + 50);
+        m_colors[i] = sf::Color(rand * 20 + 25, rand * 20 + 70, rand * 10 + 50);
     }
 }
 
@@ -28,7 +28,7 @@ void Map::draw(sf::RenderWindow& window)
         for(int x = 0; x < m_mapWidth; x++)
         {
             m_tileSprite.setColor(m_colors[y * m_mapWidth + x]);
-            m_tileSprite.setPosition(y%2==0? x*64 : x*64 + 32, y*54);
+            m_tileSprite.setPosition(x*64, y*64);
             window.draw(m_tileSprite);
         }
     }
@@ -36,10 +36,15 @@ void Map::draw(sf::RenderWindow& window)
 
 int Map::getWidth()
 {
-    return m_mapWidth * m_tileTexture.getSize().x;
+    return m_mapWidth * 64;
 }
 
 int Map::getHeight()
 {
-    return m_mapHeight * 54 + 18;
+    return m_mapHeight * 64;
+}
+
+sf::Vector2f Map::convertToCellCoordinates(float x, float y)
+{
+    return sf::Vector2f(64 * int(x / 64) + 32, 64 * int(y / 64) + 32);
 }

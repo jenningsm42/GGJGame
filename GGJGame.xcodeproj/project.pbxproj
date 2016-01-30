@@ -15,6 +15,7 @@
 		F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E221C5C9E7100FA43FA /* Worker.cpp */; };
 		F1CC0E271C5CA69C00FA43FA /* WorkerPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E251C5CA69C00FA43FA /* WorkerPool.cpp */; };
 		F1CC0E2A1C5CB94B00FA43FA /* Ritual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E281C5CB94B00FA43FA /* Ritual.cpp */; };
+		F1CC0E2E1C5D2FCE00FA43FA /* WeaponsUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E2C1C5D2FCE00FA43FA /* WeaponsUI.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,9 @@
 		F1CC0E261C5CA69C00FA43FA /* WorkerPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkerPool.h; sourceTree = "<group>"; };
 		F1CC0E281C5CB94B00FA43FA /* Ritual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ritual.cpp; sourceTree = "<group>"; };
 		F1CC0E291C5CB94B00FA43FA /* Ritual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ritual.h; sourceTree = "<group>"; };
+		F1CC0E2B1C5CBE3E00FA43FA /* Command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		F1CC0E2C1C5D2FCE00FA43FA /* WeaponsUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponsUI.cpp; sourceTree = "<group>"; };
+		F1CC0E2D1C5D2FCE00FA43FA /* WeaponsUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponsUI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,9 @@
 				F1CC0E231C5C9E7100FA43FA /* Worker.h */,
 				F1CC0E251C5CA69C00FA43FA /* WorkerPool.cpp */,
 				F1CC0E261C5CA69C00FA43FA /* WorkerPool.h */,
+				F1CC0E2B1C5CBE3E00FA43FA /* Command.h */,
+				F1CC0E2C1C5D2FCE00FA43FA /* WeaponsUI.cpp */,
+				F1CC0E2D1C5D2FCE00FA43FA /* WeaponsUI.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 				F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */,
 				F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */,
 				F14E70EF1C5B4A13009A4D6C /* (null) in Sources */,
+				F1CC0E2E1C5D2FCE00FA43FA /* WeaponsUI.cpp in Sources */,
 				F1CC0E271C5CA69C00FA43FA /* WorkerPool.cpp in Sources */,
 				F1CC0E2A1C5CB94B00FA43FA /* Ritual.cpp in Sources */,
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
