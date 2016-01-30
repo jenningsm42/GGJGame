@@ -36,15 +36,15 @@ void Map::draw(sf::RenderWindow& window)
 
 int Map::getWidth()
 {
-    return m_mapWidth * m_tileTexture.getSize().x;
+    return m_mapWidth * 64;
 }
 
 int Map::getHeight()
 {
-    return m_mapHeight * 54 + 18;
+    return m_mapHeight * 64;
 }
 
 sf::Vector2f Map::convertToCellCoordinates(float x, float y)
 {
-    return sf::Vector2f();
+    return sf::Vector2f(64 * int(x / 64) + 32, 64 * int(y / 64) + 32);
 }

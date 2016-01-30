@@ -59,12 +59,13 @@ void Application::update()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             m_running = false;
         
-        m_window.setView(m_view);
         m_window.clear(sf::Color::Black);
 
         if (m_curState != nullptr)
         {
             m_curState->update(elapsedTime.asSeconds(), this);
+            m_window.setView(m_view);
+            
             m_curState->draw(m_window);
         }
 

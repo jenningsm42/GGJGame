@@ -22,7 +22,9 @@ void Worker::initialize(Map& map)
     
     int length = distLength(rng);
     float angle = distAngle(rng);
-    m_sprite.setPosition(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
+    sf::Vector2f pos = sf::Vector2f(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
+    pos = map.convertToCellCoordinates(pos.x, pos.y);
+    m_sprite.setPosition(pos.x - m_sprite.getLocalBounds().width / 2, pos.y - m_sprite.getLocalBounds().height + 20);
 }
 
 void Worker::release()
@@ -36,7 +38,7 @@ void Worker::update(float dt)
         case CommandType::Move:
         {
             float dx = m_curCommand.x - getCenter().x;
-            float dy = m_curCommand.y - getCenter().y;
+            float dy = m_curCommand.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
             
             if(fabsf(dx) < 5.f && fabsf(dy) < 5.f)
             {
