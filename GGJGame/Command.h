@@ -1,5 +1,6 @@
 #ifndef COMMAND_H
 #define COMMAND_H
+#include "Weapontypes.h"
 
 enum struct CommandType
 {
@@ -11,6 +12,7 @@ enum struct CommandType
 struct Command
 {
     CommandType commandType;
+	weapontype weapontype;
     float x;
     float y;
 };

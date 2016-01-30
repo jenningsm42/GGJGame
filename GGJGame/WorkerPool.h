@@ -4,6 +4,7 @@
 #include "Worker.h"
 #include "Map.h"
 #include "WeaponsUI.h"
+#include "Weapontypes.h"
 class Application;
 
 class WorkerPool
@@ -24,6 +25,7 @@ private:
     int m_selectedWorker;
     sf::Texture m_selectedTexture;
     sf::Sprite m_selectedSprite;
+	bool placeWeapon = false;
 };
 
 #endif // WORKERPOOL_H

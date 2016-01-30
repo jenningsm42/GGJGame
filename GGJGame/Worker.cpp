@@ -31,7 +31,7 @@ void Worker::release()
 {
 }
 
-void Worker::update(float dt)
+void Worker::update(float dt, )
 {
     switch(m_curCommand.commandType)
     {
@@ -51,6 +51,20 @@ void Worker::update(float dt)
         } break;
         case CommandType::Place:
         {
+			float dx = m_curCommand.x - getCenter().x;
+			float dy = m_curCommand.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
+
+			if (fabsf(dx) < 5.f && fabsf(dy) < 5.f)
+			{
+				
+				m_curCommand.commandType = CommandType::None;
+				break;
+			}
+
+			float angle = atan2f(dy, dx);
+			m_sprite.move(m_speed * cosf(angle) * dt, m_speed * sinf(angle) * dt);
+
+
         } break;
         default: break;
     }

@@ -1,6 +1,7 @@
 #ifndef WEAPONSUI_H
 #define WEAPONSUI_H
 #include <SFML/Graphics.hpp>
+#include "Weapontypes.h"
 class Application;
 
 class WeaponsUI
@@ -11,7 +12,7 @@ public:
     
     void initialize(Application*);
     
-    bool update(Application*);
+    void update(Application*, weapon &weapon);
     void draw(sf::RenderWindow&);
     
 private:

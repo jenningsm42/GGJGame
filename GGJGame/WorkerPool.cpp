@@ -22,11 +22,12 @@ void WorkerPool::initialize(Map& map, Application* app)
 
 void WorkerPool::update(float dt, Application* app, Map& map)
 {
-    bool uiUpdate = false;
+	weapon weaponToPlace;
     if(m_selectedWorker != -1)
-        uiUpdate = m_weaponsUI.update(app);
+		m_weaponsUI.update(app, weaponToPlace);
+		placeWeapon = !weaponToPlace.isHover;
     
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && !uiUpdate)
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && !weaponToPlace.isHover)
     {
         sf::Vector2i mpos = sf::Mouse::getPosition();
         mpos.x += app->getView()->getCenter().x - app->getWidth() / 2;
@@ -40,7 +41,7 @@ void WorkerPool::update(float dt, Application* app, Map& map)
         }
     }
     
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Right) && m_selectedWorker != -1 && !uiUpdate)
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Right) && m_selectedWorker != -1 && !weaponToPlace.isHover)
     {
         sf::Vector2i mpos = sf::Mouse::getPosition();
         mpos.x += app->getView()->getCenter().x - app->getWidth() / 2;
@@ -54,6 +55,21 @@ void WorkerPool::update(float dt, Application* app, Map& map)
         
         m_workers[m_selectedWorker].setCommand(c);
     }
+
+	if (weaponToPlace.weapontype != weapontype::none && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		sf::Vector2i mpos = sf::Mouse::getPosition();
+		mpos.x += app->getView()->getCenter().x - app->getWidth() / 2;
+		mpos.y += app->getView()->getCenter().y - app->getHeight() / 2;
+		
+		Command c;
+		c.commandType = CommandType::Place;
+		c.weapontype = weaponToPlace.weapontype;
+		sf::Vector2f cellPos = map.convertToCellCoordinates(mpos.x, mpos.y);
+		c.x = cellPos.x;
+		c.y = cellPos.y;
+
+		m_workers[m_selectedWorker].setCommand(c);
+	}
     
     for(int i = 0; i < m_workerCount; i++)
     {
