@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "Map.h"
 #include <iostream>
+#include "Command.h"
 
 class Enemy : public GameObject
 {
@@ -18,6 +19,8 @@ public:
 
 	const sf::FloatRect getBounds() const;
 	const sf::Vector2f getCenter() const;
+private:
+	const float m_speed;
 };
 
 #endif // ENEMY_H

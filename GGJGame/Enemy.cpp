@@ -2,7 +2,7 @@
 #include <random>
 
 
-Enemy::Enemy()
+Enemy::Enemy() : m_speed(300)
 {
 
 }
@@ -11,7 +11,7 @@ Enemy::~Enemy()
 {
 }
 
-void Enemy::initialize(Map & map, sf::Texture &m_texture)
+void Enemy::initialize(Map &map, sf::Texture &m_texture)
 {
 	m_sprite.setTexture(m_texture);
 	std::random_device rd;
@@ -34,10 +34,13 @@ void Enemy::release()
 
 void Enemy::update(float dt, Map &map)
 {
-	float my_x = m_sprite.getPosition().x;
+	/*float my_x = m_sprite.getPosition().x;
 	float my_y = m_sprite.getPosition().y;
 
-	
+	float dx = map.getWidth()/2 - getCenter().x;
+	float dy = map.getHeight()/2 - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
+	float angle = atan2f(dy,dx);
+	m_sprite.move(cosf(angle)*dt, sinf(angle)*dt);*/
 }
 
 void Enemy::draw(sf::RenderWindow &window)
