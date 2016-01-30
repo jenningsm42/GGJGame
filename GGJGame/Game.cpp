@@ -14,6 +14,7 @@ void Game::initialize(Application* app)
     app->getView()->setCenter(m_map.getWidth() / 2, m_map.getHeight() / 2);
 	m_ritual.initialize(m_map);
     m_workerPool.initialize(m_map);
+	m_enemyPool.initialize(m_map);
 }
 
 void Game::release()
@@ -46,6 +47,7 @@ void Game::update(float dt, Application* app)
         view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2 - 18);
     
     m_workerPool.update(dt, app);
+	m_enemyPool.update(dt, app, m_map);
 }
 
 void Game::draw(sf::RenderWindow& window)
@@ -53,5 +55,5 @@ void Game::draw(sf::RenderWindow& window)
 	m_map.draw(window);
 	m_ritual.draw(window);
     m_workerPool.draw(window);
-
+	m_enemyPool.draw(window);
 }
