@@ -15,6 +15,8 @@ public:
     int getWidth();
     int getHeight();
     
+    sf::Vector2f convertToCellCoordinates(float x, float y);
+    
 private:
     const static int m_mapWidth = 51;
     const static int m_mapHeight = 51;
