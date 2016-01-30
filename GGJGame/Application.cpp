@@ -1,9 +1,14 @@
 #include "Application.h"
 
-Application::Application(State* state) : m_running(true)
+Application::Application(State* state) : m_running(true), m_focused(true)
 {
 	setState(state);
-	m_window.create(sf::VideoMode(800, 600), "GGJGame");
+    
+    m_width = sf::VideoMode::getDesktopMode().width;
+    m_height = sf::VideoMode::getDesktopMode().height;
+    
+    m_window.create(sf::VideoMode::getDesktopMode(), "GGJGame", sf::Style::Fullscreen);
+    m_view.reset(sf::FloatRect(0, 0, m_width, m_height));
 }
 
 Application::~Application()
@@ -39,17 +44,33 @@ void Application::update()
 	{
 		if (event.type == sf::Event::Closed)
 			m_running = false;
+        if (event.type == sf::Event::LostFocus)
+            m_focused = false;
+        if (event.type == sf::Event::GainedFocus)
+            m_focused = true;
 	}
 
-	m_window.clear(sf::Color::Black);
+    if(m_focused)
+    {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            m_running = false;
+        
+        m_window.setView(m_view);
+        m_window.clear(sf::Color::Black);
 
-	if (m_curState != nullptr)
-	{
-		m_curState->update(elapsedTime.asSeconds());
-		m_curState->draw(m_window);
-	}
+        if (m_curState != nullptr)
+        {
+            m_curState->update(elapsedTime.asSeconds(), this);
+            m_curState->draw(m_window);
+        }
 
-	m_window.display();
+        m_window.display();
+    }
 
 	elapsedTime = clock.restart();
+}
+
+sf::View* Application::getView()
+{
+    return &m_view;
 }

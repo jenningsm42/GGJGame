@@ -8,7 +8,7 @@ public:
 	void initialize() override;
 	void release() override;
 
-	void update(float dt) override;
+	void update(float dt, Application*) override;
 	void draw(sf::RenderWindow&) override;
 
 private:
