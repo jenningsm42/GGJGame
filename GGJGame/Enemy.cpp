@@ -2,7 +2,7 @@
 #include <random>
 
 
-Enemy::Enemy() : m_speed(300)
+Enemy::Enemy() : m_speed(45)
 {
 
 }
@@ -34,13 +34,13 @@ void Enemy::release()
 
 void Enemy::update(float dt, Map &map)
 {
-	/*float my_x = m_sprite.getPosition().x;
+	float my_x = m_sprite.getPosition().x;
 	float my_y = m_sprite.getPosition().y;
 
 	float dx = map.getWidth()/2 - getCenter().x;
 	float dy = map.getHeight()/2 - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
 	float angle = atan2f(dy,dx);
-	m_sprite.move(cosf(angle)*dt, sinf(angle)*dt);*/
+	m_sprite.move(cosf(angle)*dt*m_speed, sinf(angle)*dt*m_speed);
 }
 
 void Enemy::draw(sf::RenderWindow &window)
