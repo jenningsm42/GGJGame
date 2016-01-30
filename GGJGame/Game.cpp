@@ -56,7 +56,7 @@ void Game::update(float dt, Application* app)
 void Game::draw(sf::RenderWindow& window)
 {
 	m_map.draw(window);
-    
+	m_ritual.draw(window);
     for(int i = 0; i < m_workerCount; i++)
         m_workers[i].draw(window);
 }

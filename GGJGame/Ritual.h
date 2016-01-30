@@ -25,7 +25,7 @@ private:
 	sf::Sprite m_personSprite;
 	sf::Texture m_fireTexture;
 	sf::Sprite m_fireSprite;
-	int getRandomLocation();
+	int getXLoc(int n);
 	const int personNumber = 5;
 };
 
