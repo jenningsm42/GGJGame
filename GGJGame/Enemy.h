@@ -9,6 +9,7 @@ class Enemy : public GameObject
 {
 public:
 	Enemy();
+    Enemy(const Enemy&);
 	~Enemy();
 
 	void initialize(Map& map, sf::Texture &m_texture);
@@ -16,11 +17,18 @@ public:
 
 	void update(float dt, Map &map);
 	void draw(sf::RenderWindow&) override;
+    
+    void damage();
+    int getHealth();
 
 	const sf::FloatRect getBounds() const;
 	const sf::Vector2f getCenter() const;
+    
+    Enemy& operator=(const Enemy&);
+    
 private:
-	const float m_speed;
+    int m_health;
+    float m_speed;
 };
 
 #endif // ENEMY_H

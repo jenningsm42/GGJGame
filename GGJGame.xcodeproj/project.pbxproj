@@ -18,6 +18,8 @@
 		F1CC0E2E1C5D2FCE00FA43FA /* WeaponsUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E2C1C5D2FCE00FA43FA /* WeaponsUI.cpp */; };
 		F1CC0E331C5D47BC00FA43FA /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E2F1C5D47BC00FA43FA /* Enemy.cpp */; };
 		F1CC0E341C5D47BC00FA43FA /* EnemyPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E311C5D47BC00FA43FA /* EnemyPool.cpp */; };
+		F1CC0E371C5D5D9000FA43FA /* Projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E351C5D5D9000FA43FA /* Projectile.cpp */; };
+		F1CC0E3A1C5D5DA200FA43FA /* ProjectilePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E381C5D5DA200FA43FA /* ProjectilePool.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,10 @@
 		F1CC0E301C5D47BC00FA43FA /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		F1CC0E311C5D47BC00FA43FA /* EnemyPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyPool.cpp; sourceTree = "<group>"; };
 		F1CC0E321C5D47BC00FA43FA /* EnemyPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPool.h; sourceTree = "<group>"; };
+		F1CC0E351C5D5D9000FA43FA /* Projectile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Projectile.cpp; sourceTree = "<group>"; };
+		F1CC0E361C5D5D9000FA43FA /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projectile.h; sourceTree = "<group>"; };
+		F1CC0E381C5D5DA200FA43FA /* ProjectilePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectilePool.cpp; sourceTree = "<group>"; };
+		F1CC0E391C5D5DA200FA43FA /* ProjectilePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectilePool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,10 @@
 				F1CC0E2B1C5CBE3E00FA43FA /* Command.h */,
 				F1CC0E2C1C5D2FCE00FA43FA /* WeaponsUI.cpp */,
 				F1CC0E2D1C5D2FCE00FA43FA /* WeaponsUI.h */,
+				F1CC0E351C5D5D9000FA43FA /* Projectile.cpp */,
+				F1CC0E361C5D5D9000FA43FA /* Projectile.h */,
+				F1CC0E381C5D5DA200FA43FA /* ProjectilePool.cpp */,
+				F1CC0E391C5D5DA200FA43FA /* ProjectilePool.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -199,9 +209,11 @@
 				F1CC0E331C5D47BC00FA43FA /* Enemy.cpp in Sources */,
 				F1CC0E341C5D47BC00FA43FA /* EnemyPool.cpp in Sources */,
 				F14E70EF1C5B4A13009A4D6C /* (null) in Sources */,
+				F1CC0E3A1C5D5DA200FA43FA /* ProjectilePool.cpp in Sources */,
 				F1CC0E2E1C5D2FCE00FA43FA /* WeaponsUI.cpp in Sources */,
 				F1CC0E271C5CA69C00FA43FA /* WorkerPool.cpp in Sources */,
 				F1CC0E2A1C5CB94B00FA43FA /* Ritual.cpp in Sources */,
+				F1CC0E371C5D5D9000FA43FA /* Projectile.cpp in Sources */,
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
 				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
 				F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */,

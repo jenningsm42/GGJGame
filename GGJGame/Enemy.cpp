@@ -1,10 +1,15 @@
 #include "Enemy.h"
 #include <random>
 
-
-Enemy::Enemy() : m_speed(45)
+Enemy::Enemy() : m_speed(45), m_health(1)
 {
+}
 
+Enemy::Enemy(const Enemy& other)
+{
+    m_sprite = other.m_sprite;
+    m_speed = other.m_speed;
+    m_health = other.m_health;
 }
 
 Enemy::~Enemy()
@@ -22,10 +27,6 @@ void Enemy::initialize(Map &map, sf::Texture &m_texture)
 	float length = distLength(rng);
 	float angle = distAngle(rng);
 	m_sprite.setPosition(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
-	std::cout << m_sprite.getPosition().x;
-	std::cout << "\n";
-	std::cout << m_sprite.getPosition().y;
-	std::cout << "\n";
 }
 
 void Enemy::release()
@@ -48,6 +49,16 @@ void Enemy::draw(sf::RenderWindow &window)
 	window.draw(m_sprite);
 }
 
+void Enemy::damage()
+{
+    m_health--;
+}
+
+int Enemy::getHealth()
+{
+    return m_health;
+}
+
 const sf::FloatRect Enemy::getBounds() const
 {
 	return m_sprite.getGlobalBounds();
@@ -56,4 +67,11 @@ const sf::FloatRect Enemy::getBounds() const
 const sf::Vector2f Enemy::getCenter() const
 {
 	return m_sprite.getPosition() + 0.5f * sf::Vector2f(m_sprite.getLocalBounds().width, m_sprite.getLocalBounds().height);
+}
+
+Enemy& Enemy::operator=(const Enemy& other)
+{
+    m_sprite = other.m_sprite;
+    m_speed = other.m_speed;
+    m_health = other.m_health;
 }
