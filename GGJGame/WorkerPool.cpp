@@ -1,4 +1,5 @@
 #include "WorkerPool.h"
+#include "Application.h"
 
 WorkerPool::WorkerPool() : m_workerCount(5), m_selectedWorker(-1)
 {
@@ -17,11 +18,13 @@ void WorkerPool::initialize(Map& map)
         m_workers[i].initialize(map);
 }
 
-void WorkerPool::update(float dt)
+void WorkerPool::update(float dt, Application* app)
 {
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
         sf::Vector2i mpos = sf::Mouse::getPosition();
+        mpos.x += app->getView()->getCenter().x - app->getWidth() / 2;
+        mpos.y += app->getView()->getCenter().y - app->getHeight() / 2;
         
         m_selectedWorker = -1;
         for(int i = 0; i < m_workerCount; i++)
@@ -36,7 +39,7 @@ void WorkerPool::update(float dt)
         m_workers[i].update(dt);
         if(m_selectedWorker == i)
             m_selectedSprite.setPosition(m_workers[i].getCenter().x - m_selectedTexture.getSize().x / 2,
-                                         m_workers[i].getCenter().y - m_selectedTexture.getSize().y / 2);
+                                         m_workers[i].getCenter().y - 70);
     }
 }
 

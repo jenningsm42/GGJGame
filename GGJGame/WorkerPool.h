@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Worker.h"
 #include "Map.h"
+class Application;
 
 class WorkerPool
 {
@@ -12,7 +13,7 @@ public:
     
     void initialize(Map&);
     
-    void update(float dt);
+    void update(float dt, Application*);
     void draw(sf::RenderWindow&);
     
 private:

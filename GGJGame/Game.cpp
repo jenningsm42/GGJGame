@@ -45,7 +45,7 @@ void Game::update(float dt, Application* app)
     if(view->getCenter().y > m_map.getHeight() - app->getHeight() / 2 - 18)
         view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2 - 18);
     
-    m_workerPool.update(dt);
+    m_workerPool.update(dt, app);
 }
 
 void Game::draw(sf::RenderWindow& window)

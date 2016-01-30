@@ -15,8 +15,8 @@ public:
     void update(float dt);
     void draw(sf::RenderWindow&) override;
     
-    const sf::FloatRect& getBounds() const;
-    const sf::Vector2f& getCenter() const;
+    const sf::FloatRect getBounds() const;
+    const sf::Vector2f getCenter() const;
 };
 
 #endif // WORKER_H

@@ -5,7 +5,8 @@ Application::Application(State* state) : m_running(true), m_focused(true)
     m_width = sf::VideoMode::getDesktopMode().width;
     m_height = sf::VideoMode::getDesktopMode().height;
     
-    m_window.create(sf::VideoMode::getDesktopMode(), "GGJGame", sf::Style::Fullscreen);
+    m_window.create(sf::VideoMode::getDesktopMode(), "Ritual Defence", sf::Style::Fullscreen);
+    m_window.setVerticalSyncEnabled(true);
     m_view.reset(sf::FloatRect(0, 0, m_width, m_height));
     
     setState(state);
