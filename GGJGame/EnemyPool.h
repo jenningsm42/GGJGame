@@ -19,6 +19,7 @@ public:
 
 private:
 	sf::Clock clock;
+	sf::Clock initialClock;
 	int Enemycount = 0;
 	std::vector<Enemy> enemies;
 	sf::Texture m_texture;
