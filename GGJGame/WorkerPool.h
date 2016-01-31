@@ -15,7 +15,7 @@ public:
     
     void initialize(Map&, Application*);
     
-    void update(float dt, Application*, Map& map);
+    void update(float dt, Application*, Map&);
     void draw(sf::RenderWindow&);
     
 private:
@@ -26,6 +26,8 @@ private:
     sf::Texture m_selectedTexture;
     sf::Sprite m_selectedSprite;
 	bool placeWeapon = false;
+    
+    bool validMove(float x, float y, Map&);
 };
 
 #endif // WORKERPOOL_H

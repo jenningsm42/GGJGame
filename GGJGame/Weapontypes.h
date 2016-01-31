@@ -1,14 +1,14 @@
 #pragma once
 
 enum struct weapontype {
-	shooter,
+	none,
+    shooter,
 	acid,
 	trap,
-	wall,
-	none
+	wall
 };
 
 struct weapon {
 	bool isHover = false;
-	weapontype weapontype;
+    weapontype weapontype = weapontype::none;
 };
