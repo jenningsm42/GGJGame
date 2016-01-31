@@ -7,6 +7,7 @@
 #include "WeaponTypes.h"
 #include "EnemyPool.h"
 #include "Currency.h"
+#include "Announcements.h"
 class Application;
 
 class WorkerPool
@@ -17,7 +18,7 @@ public:
     
     void initialize(Map&, Application*);
     
-    void update(float dt, Application* app, Map& map, WeaponPool &weaponPool, EnemyPool& enemyPool, Currency& currency);
+    void update(float dt, Application* app, Map& map, WeaponPool&, EnemyPool&, Currency&, Announcements&);
     void draw(sf::RenderWindow&);
     
 private:

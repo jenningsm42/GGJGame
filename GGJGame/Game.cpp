@@ -16,6 +16,8 @@ void Game::initialize(Application* app)
 	m_enemyPool.initialize(m_map);
     m_workerPool.initialize(m_map, app);
     m_weaponPool.initialize(m_map, app);
+    
+    m_announcements.setAnnouncement("You have 30 seconds to build your defences. Good luck!");
 }
 
 void Game::release()
@@ -48,11 +50,14 @@ void Game::update(float dt, Application* app)
         view->setCenter(view->getCenter().x, m_map.getHeight() - app->getHeight() / 2);
     
     m_ritual.update(dt);
-	m_enemyPool.update(dt, app, m_map, m_currency);
-    m_workerPool.update(dt, app, m_map, m_weaponPool, m_enemyPool, m_currency);
+	m_enemyPool.update(dt, app, m_map, m_currency, m_announcements);
+    m_workerPool.update(dt, app, m_map, m_weaponPool, m_enemyPool, m_currency, m_announcements);
     m_weaponPool.update(dt, app, m_map, m_enemyPool, m_projectilePool);
     m_projectilePool.update(dt);
     m_currency.update(app);
+    m_announcements.update(app);
+    
+    
 }
 
 void Game::draw(sf::RenderWindow& window)
@@ -64,4 +69,5 @@ void Game::draw(sf::RenderWindow& window)
     m_ritual.draw(window);
     m_projectilePool.draw(window);
     m_currency.draw(window);
+    m_announcements.draw(window);
 }

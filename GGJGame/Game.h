@@ -7,6 +7,7 @@
 #include "EnemyPool.h"
 #include "ProjectilePool.h"
 #include "Currency.h"
+#include "Announcements.h"
 
 class Game : public State
 {
@@ -28,6 +29,7 @@ private:
 	WeaponPool m_weaponPool;
     ProjectilePool m_projectilePool;
     Currency m_currency;
+    Announcements m_announcements;
 };
 
 #endif // GAME_H

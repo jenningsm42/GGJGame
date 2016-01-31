@@ -21,7 +21,7 @@ void WorkerPool::initialize(Map& map, Application* app)
     m_weaponsUI.initialize(app);
 }
 
-void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool, EnemyPool& enemyPool, Currency& currency)
+void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool, EnemyPool& enemyPool, Currency& currency, Announcements& announcements)
 {
 	WeaponUIStatus weaponToPlace;
     if(m_selectedWorker != -1)
@@ -31,6 +31,8 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
         {
             if(currency.getPrice(weaponToPlace.weaponType) <= currency.getCurrency())
                 m_placingWeaponType = weaponToPlace.weaponType;
+            else
+                announcements.setAnnouncement("Not enough energy to spawn this defence.", sf::Color(255, 0, 0), 3.f);
         }
     }
     

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Map.h"
 #include "Currency.h"
+#include "Announcements.h"
 #include "Enemy.h"
 #include "GameObject.h"
 class Application;
@@ -14,20 +15,21 @@ public:
 	~EnemyPool();
 
 	void initialize(Map&);
-	void update(float dt, Application*, Map&, Currency&);
+	void update(float dt, Application*, Map&, Currency&, Announcements&);
 	void draw(sf::RenderWindow&);
     
     int size();
     Enemy& getEnemy(int index);
     
 private:
-	sf::Clock zombieClock;
-	sf::Clock ghostClock;
-	sf::Clock initialClock;
-	int Enemycount = 0;
-	std::vector<Enemy*> enemies;
+	sf::Clock m_zombieClock;
+	sf::Clock m_ghostClock;
+	sf::Clock m_waveClock;
+	int m_enemyCount = 0;
+    int m_waveCount = 0;
+    bool m_inWave = false;
+	std::vector<Enemy*> m_enemies;
 	sf::Texture m_enemyTextures[2];
-
 };
 
 #endif
