@@ -21,7 +21,7 @@ void WorkerPool::initialize(Map& map, Application* app)
     m_weaponsUI.initialize(app);
 }
 
-void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool)
+void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool, EnemyPool& enemyPool)
 {
 	WeaponUIStatus weaponToPlace;
     if(m_selectedWorker != -1)
@@ -41,6 +41,8 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
         m_selectedWorker = -1;
         for(int i = 0; i < m_workerCount; i++)
         {
+            if(m_workers[i].getHealth() <= 0) continue;
+            
             if(m_workers[i].getBounds().contains(mpos.x, mpos.y))
                 m_selectedWorker = i;
         }
@@ -88,7 +90,10 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
     
     for(int i = 0; i < m_workerCount; i++)
     {
-        m_workers[i].update(dt, map, weaponPool);
+        if(m_workers[i].getHealth() <= 0) continue;
+        
+        m_workers[i].update(dt, map, weaponPool, enemyPool);
+        
         if(m_selectedWorker == i)
             m_selectedSprite.setPosition(m_workers[i].getCenter().x - m_selectedTexture.getSize().x / 2,
                                          m_workers[i].getCenter().y - 70);
@@ -98,8 +103,12 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
 void WorkerPool::draw(sf::RenderWindow& window)
 {
     for(int i = 0; i < m_workerCount; i++)
+    {
+        if(m_workers[i].getHealth() <= 0) continue;
+        
         m_workers[i].draw(window);
-    
+    }
+        
     if(m_selectedWorker != -1)
     {
         window.draw(m_selectedSprite);

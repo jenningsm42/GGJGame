@@ -4,7 +4,6 @@
 #include "Map.h"
 #include <SFML/Graphics.hpp>
 
-
 class Enemy : public GameObject
 {
 public:

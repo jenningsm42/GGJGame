@@ -1,7 +1,7 @@
 #include "Worker.h"
 #include <random>
 
-Worker::Worker() : m_speed(200.f)
+Worker::Worker() : m_speed(200.f), m_health(1)
 {
     m_curCommand.commandType = CommandType::None;
 }
@@ -31,7 +31,7 @@ void Worker::release()
 {
 }
 
-void Worker::update(float dt, Map &map, WeaponPool &weaponPool)
+void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemyPool)
 {
     switch(m_curCommand.commandType)
     {
@@ -74,11 +74,32 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool)
         } break;
         default: break;
     }
+    
+    for(int i = 0; i < enemyPool.size(); i++)
+    {
+        sf::Vector2f epos = enemyPool.getEnemy(i).getCenter();
+        float dx = epos.x - getCenter().x;
+        float dy = epos.y - getCenter().y;
+        float dist = dx*dx + dy*dy;
+        
+        if(dist < 400.f)
+            damage();
+    }
 }
 
 void Worker::draw(sf::RenderWindow& window)
 {
     window.draw(m_sprite);
+}
+
+void Worker::damage()
+{
+    m_health--;
+}
+
+int Worker::getHealth()
+{
+    return m_health;
 }
 
 const sf::FloatRect Worker::getBounds() const
