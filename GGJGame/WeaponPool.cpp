@@ -13,7 +13,7 @@ void WeaponPool::initialize(Map &, Application *)
 {
 	m_texture[0].loadFromFile("data/shooter.png");
 	m_texture[1].loadFromFile("data/totem.png");
-	m_texture[2].loadFromFile("data/totem.png");
+	m_texture[2].loadFromFile("data/tower.png");
 }
 
 void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
