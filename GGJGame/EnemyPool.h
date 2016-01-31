@@ -29,6 +29,7 @@ private:
 	int m_enemyCount = 0;
     int m_waveCount = 0;
     bool m_inWave = false;
+    float m_spawnRate;
 	std::vector<Enemy*> m_enemies;
 	sf::Texture m_enemyTextures[2];
 };

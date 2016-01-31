@@ -22,6 +22,8 @@ public:
     
 private:
     int m_currency;
+    sf::Texture m_iconTexture;
+    sf::Sprite m_iconSprite;
     sf::Font m_font;
     sf::Text m_text;
 };

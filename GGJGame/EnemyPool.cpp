@@ -4,8 +4,9 @@
 #include "Zombie.h"
 #include "Ritual.h"
 #include <string>
+#include <cmath>
 
-EnemyPool::EnemyPool()
+EnemyPool::EnemyPool() : m_spawnRate(1.f)
 {
 }
 
@@ -24,6 +25,7 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
 	if (m_waveClock.getElapsedTime().asSeconds() > 3.f && !m_inWave) {//todo
         m_inWave = true;
         m_waveClock.restart();
+        m_spawnRate = expf(-.55 * (float)m_waveCount);
         m_waveCount++;
         
         announcements.setAnnouncement("Wave  " + std::to_string(m_waveCount) + "  starting..");
@@ -44,13 +46,13 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
         
         if(m_waveClock.getElapsedTime().asSeconds() <= 60.f)
         {
-            if (m_zombieClock.getElapsedTime().asSeconds() > 5.f) {
+            if (m_zombieClock.getElapsedTime().asSeconds() > 5.f * m_spawnRate) {
                 m_enemies.push_back(new Zombie());
                 m_enemies.back()->initialize(map, m_enemyTextures[0]);
                 m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
                 m_zombieClock.restart();
             }
-            if (m_ghostClock.getElapsedTime().asSeconds() > 15.f && m_waveCount >= 2) {
+            if (m_waveCount >= 2 && m_ghostClock.getElapsedTime().asSeconds() > 15.f * m_spawnRate) {
                 m_enemies.push_back(new Ghost());
                 m_enemies.back()->initialize(map, m_enemyTextures[1]);
                 m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
@@ -72,7 +74,7 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
             float dy = map.getHeight() / 2 - m_enemies[i]->getCenter().y;
             float dist = dx*dx + dy*dy;
             
-            if(dist < 400.f*400.f)
+            if(dist < 800.f*800.f)
             {
                 if(m_enemies[i]->getAssignedRitualist() == -1 || !ritual->isAlive(m_enemies[i]->getAssignedRitualist()))
                 {
