@@ -2,6 +2,8 @@
 
 Shooter::Shooter()
 {
+	m_texture.loadFromFile("data/shooter.png");
+	m_sprite.setTexture(m_texture);
 }
 
 Shooter::~Shooter()
@@ -10,8 +12,7 @@ Shooter::~Shooter()
 
 void Shooter::initialize(Map &, float x, float y)
 {
-	m_texture.loadFromFile("data/shooter.png");
-	m_sprite.setTexture(m_texture);
+	
 	m_sprite.setPosition(x, y);
 }
 

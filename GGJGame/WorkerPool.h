@@ -15,7 +15,7 @@ public:
     
     void initialize(Map&, Application*);
     
-    void update(float dt, Application*, Map& map);
+    void update(float dt, Application*, Map& map, WeaponPool weaponPool);
     void draw(sf::RenderWindow&);
     
 private:

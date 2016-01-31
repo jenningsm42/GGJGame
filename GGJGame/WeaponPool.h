@@ -13,8 +13,11 @@ public:
 	~WeaponPool();
 
 	void initialize(Map&, Application*);
+	void placeWeapon(weapontype type, float x, float y, Map &);
 	void update(float dt, Application*, Map& map);
 	void draw(sf::RenderWindow&);
 
-private 
+private:
+		sf::Texture m_texture[1];
+		std::vector<Weapon> weapons;
 };

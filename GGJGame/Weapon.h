@@ -8,6 +8,8 @@
 
 class Weapon : public GameObject
 {
+public:
+	void Weapon::initialize(Map &, float x, float y);
 protected:
 	weapontype m_type;
 };

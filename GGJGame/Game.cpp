@@ -15,6 +15,7 @@ void Game::initialize(Application* app)
 	m_ritual.initialize(m_map);
 	m_enemyPool.initialize(m_map);
     m_workerPool.initialize(m_map, app);
+	m_weaponPool.initialize(m_map, app);
 
 }
 
@@ -50,6 +51,7 @@ void Game::update(float dt, Application* app)
     m_ritual.update(dt);
 	m_enemyPool.update(dt, app, m_map);
     m_workerPool.update(dt, app, m_map);
+	m_weaponPool.update(dt, app, m_map)
 
 }
 

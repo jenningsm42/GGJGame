@@ -23,6 +23,7 @@ private:
 	Ritual m_ritual;
     WorkerPool m_workerPool;
 	EnemyPool m_enemyPool;
+	WeaponPool m_weaponPool;
 };
 
 #endif // GAME_H

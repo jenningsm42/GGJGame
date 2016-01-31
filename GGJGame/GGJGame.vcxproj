@@ -129,6 +129,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Ritual.cpp" />
     <ClCompile Include="Shooter.cpp" />
+    <ClCompile Include="WeaponPool.cpp" />
     <ClCompile Include="WeaponsUI.cpp" />
     <ClCompile Include="Worker.cpp" />
     <ClCompile Include="WorkerPool.cpp" />
