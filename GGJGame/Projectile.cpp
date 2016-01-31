@@ -2,7 +2,8 @@
 #include "Enemy.h"
 #include <cmath>
 
-Projectile::Projectile(sf::Texture& texture, sf::Vector2f spawn, Enemy* target) : m_speed(700.f), m_target(target)
+Projectile::Projectile(sf::Texture& texture, sf::Vector2f spawn, Enemy* target, ProjectileType type)
+    : m_speed(700.f), m_target(target), m_type(type)
 {
     m_sprite.setTexture(texture);
     m_sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
@@ -32,8 +33,17 @@ bool Projectile::update(float dt)
     
     if(fabsf(dx) < 10.f && fabsf(dy) < 10.f)
     {
-        m_target->damage();
-        return true; // hit target
+		if (m_type == ProjectileType::Energy) {
+			m_target->damage();
+			return true; // hit target
+		}
+		if (m_type == ProjectileType::Acid) {
+			m_target->damageOverTime();
+			return true;
+		}
+		if (m_type == ProjectileType::Dart) {
+			m_target->slow();
+		}
     }
     
     float angle = atan2f(dy, dx);

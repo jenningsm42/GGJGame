@@ -4,6 +4,7 @@ ProjectilePool::ProjectilePool()
 {
     m_projectileTexture[0].loadFromFile("data/projectile.png");
 	m_projectileTexture[1].loadFromFile("data/acid.png");
+	m_projectileTexture[2].loadFromFile("data/projectile.png");
 }
 
 ProjectilePool::~ProjectilePool()
@@ -14,13 +15,15 @@ void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, Projectile
 {
 	switch (type) {
 	case ProjectileType::Energy:
-            m_projectiles.push_back(Projectile(m_projectileTexture[0], sf::Vector2f(x, y), target));
+            m_projectiles.push_back(Projectile(m_projectileTexture[0], sf::Vector2f(x, y), target, type));
             break;
 	case ProjectileType::Acid:
-            m_projectiles.push_back(Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target));
+            m_projectiles.push_back(Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target, type));
             break;
+	case ProjectileType::Dart:
+			m_projectiles.push_back(Projectile(m_projectileTexture[2], sf::Vector2f(x, y), target, type));
+			break;
 	}
-    
 }
 
 void ProjectilePool::update(float dt)

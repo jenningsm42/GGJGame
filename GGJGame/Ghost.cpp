@@ -4,7 +4,7 @@
 Ghost::Ghost() 
 {
 	m_speed = 90;
-	m_health = 1;
+	m_health = 100;
 
 }
 

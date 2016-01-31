@@ -76,6 +76,7 @@
 		F1CC0E511C5DF52800FA43FA /* Totem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Totem.h; sourceTree = "<group>"; };
 		F1CC0E531C5E014100FA43FA /* Announcements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Announcements.cpp; sourceTree = "<group>"; };
 		F1CC0E541C5E014100FA43FA /* Announcements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcements.h; sourceTree = "<group>"; };
+		F1CC0E561C5E1B4C00FA43FA /* Tower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tower.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +109,7 @@
 		F14E70EB1C5B4A13009A4D6C /* GGJGame */ = {
 			isa = PBXGroup;
 			children = (
+				F1CC0E561C5E1B4C00FA43FA /* Tower.h */,
 				F1CC0E4F1C5DF52800FA43FA /* ProjectileType.h */,
 				F1CC0E501C5DF52800FA43FA /* Totem.cpp */,
 				F1CC0E511C5DF52800FA43FA /* Totem.h */,

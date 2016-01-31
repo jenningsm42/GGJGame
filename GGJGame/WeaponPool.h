@@ -4,6 +4,7 @@
 #include "Weapon.h"
 #include "Shooter.h"
 #include "Totem.h"
+#include "Tower.h"
 
 
 class WeaponPool
@@ -18,7 +19,7 @@ public:
 	void draw(sf::RenderWindow&);
 
 private:
-	sf::Texture m_texture[2];
+	sf::Texture m_texture[3];
 	std::vector<Weapon*> weapons;
 };
 

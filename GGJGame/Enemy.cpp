@@ -2,13 +2,25 @@
 
 void Enemy::damage()
 {
-	m_health--;
+	m_health-=20;
 }
 
 int Enemy::getHealth()
 {
 	return m_health;
 }
+
+void Enemy::damageOverTime()
+{
+	DotDuration = 5;
+}
+
+void Enemy::slow()
+{
+	slowDuration = 6;
+}
+
+
 
 const sf::FloatRect Enemy::getBounds() const
 {

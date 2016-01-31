@@ -4,7 +4,7 @@
 Zombie::Zombie() 
 {
 	m_speed = 45;
-	m_health = 1;
+	m_health = 100;
 
 }
 
@@ -45,6 +45,15 @@ void Zombie::update(float dt, Map &map)
 	float dy = map.getHeight()/2 - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
 	float angle = atan2f(dy,dx);
 	m_sprite.move(cosf(angle)*dt*m_speed, sinf(angle)*dt*m_speed);
+
+	if (DotDuration > 0) {
+		damage();
+		DotDuration--;
+	}
+
+	if (slowDuration > 0) {
+		slowDuration--;
+	}
 }
 
 void Zombie::draw(sf::RenderWindow &window)

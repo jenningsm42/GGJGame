@@ -13,6 +13,7 @@ void WeaponPool::initialize(Map &, Application *)
 {
 	m_texture[0].loadFromFile("data/shooter.png");
 	m_texture[1].loadFromFile("data/totem.png");
+	m_texture[2].loadFromFile("data/totem.png");
 }
 
 void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
@@ -25,6 +26,10 @@ void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
 		case WeaponType::Acid: {
 			weapons.push_back(new Totem());
 			weapons.back()->initialize(map, x, y, m_texture[1]);
+		}
+		case WeaponType::Blowdart: {
+			weapons.push_back(new Tower());
+			weapons.back()->initialize(map, x, y, m_texture[2]);
 		}
         default: break;
 	}

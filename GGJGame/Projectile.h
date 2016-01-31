@@ -1,16 +1,17 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 #include <SFML/Graphics.hpp>
+#include "ProjectileType.h"
 class Enemy;
 
 class Projectile
 {
 public:
-    Projectile(sf::Texture&, sf::Vector2f spawn, Enemy* target);
+    Projectile(sf::Texture&, sf::Vector2f spawn, Enemy* target, ProjectileType type);
     Projectile(const Projectile&);
     ~Projectile();
     
-    bool update(float dt);
+	bool update(float dt);
     void draw(sf::RenderWindow&);
     
     const sf::FloatRect getBounds() const;
@@ -20,6 +21,7 @@ public:
     
 private:
     sf::Sprite m_sprite;
+    ProjectileType m_type;
     Enemy* m_target;
     float m_speed;
 };
