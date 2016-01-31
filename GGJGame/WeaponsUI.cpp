@@ -49,8 +49,8 @@ void WeaponsUI::update(Application* app, WeaponUIStatus &retval)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 				switch (i) {
                     case 0: retval.weaponType = WeaponType::Shooter; break;
-                    case 1: retval.weaponType = WeaponType::Trap; break;
-                    case 2: retval.weaponType = WeaponType::Acid; break;
+                    case 1: retval.weaponType = WeaponType::Acid; break;
+                    case 2: retval.weaponType = WeaponType::Trap; break;
                     case 3: retval.weaponType = WeaponType::Wall; break;
                     default: retval.weaponType = WeaponType::None; break;
 				}

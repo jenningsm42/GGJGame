@@ -61,7 +61,7 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool)
             {
                 m_sprite.setPosition(m_curCommand.x - m_sprite.getLocalBounds().width / 2,
                                      m_curCommand.y - m_sprite.getLocalBounds().height + 20);
-                
+				
 				weaponPool.placeWeapon(m_curCommand.weaponType, m_curCommand.x, m_curCommand.y, map);
 				m_curCommand.commandType = CommandType::None;
 				break;

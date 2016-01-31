@@ -126,6 +126,7 @@
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ProjectilePool.cpp" />
+    <ClCompile Include="Totem.cpp" />
     <ClCompile Include="Zombie.cpp" />
     <ClCompile Include="EnemyPool.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ProjectilePool.h" />
+    <ClInclude Include="Totem.h" />
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="EnemyPool.h" />
     <ClInclude Include="Game.h" />
