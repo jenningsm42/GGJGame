@@ -31,6 +31,8 @@ private:
     Command m_curCommand;
     const float m_speed;
     int m_health;
+	sf::Texture m_texture[3];
+	sf::Sprite m_sprite;
     sf::Clock m_buildTimer;
     bool m_building;
     sf::Texture m_moveTileTexture;

@@ -1,11 +1,7 @@
 #include "EnemyPool.h"
-#include "Application.h"
-#include "Ghost.h"
-#include "Zombie.h"
 #include "Ritual.h"
-#include "Bar.h"
-#include <string>
-#include <cmath>
+
+
 
 EnemyPool::EnemyPool() : m_spawnRate(1.f)
 {
@@ -18,7 +14,8 @@ EnemyPool::~EnemyPool()
 void EnemyPool::initialize(Map &)
 {
 	m_enemyTextures[0].loadFromFile("data/zombie.png");
-	m_enemyTextures[1].loadFromFile("data/ghost.png");
+    m_enemyTextures[1].loadFromFile("data/ghost.png");
+    m_enemyTextures[2].loadFromFile("data/ghost_man.png");
     m_zombieDeathBuf.loadFromFile("data/tribal_3_bip.wav");
     m_ghostDeathBuf.loadFromFile("data/Tribal_2_bip.wav");
     m_zdSound.setBuffer(m_zombieDeathBuf);
@@ -27,7 +24,7 @@ void EnemyPool::initialize(Map &)
 
 void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency, Announcements& announcements, Ritual* ritual)
 {
-	if (m_waveClock.getElapsedTime().asSeconds() > 3.f && !m_inWave) {//todo
+	if (m_waveClock.getElapsedTime().asSeconds() > 30.f && !m_inWave) {
         m_inWave = true;
         m_waveClock.restart();
         m_spawnRate = expf(-.55 * (float)m_waveCount);
@@ -72,6 +69,12 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
                 
                 m_ghostClock.restart();
             }
+			if (m_waveCount >= 3 && m_bossClock.getElapsedTime().asSeconds() > 22.f * m_spawnRate) {
+				m_enemies.push_back(new BossGhost());
+				m_enemies.back()->initialize(map, m_enemyTextures[1]);
+				m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
+				m_bossClock.restart();
+			}
         }
         
         for (int i = 0; i < m_enemies.size(); i++) {

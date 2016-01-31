@@ -13,8 +13,11 @@ Worker::~Worker()
 
 void Worker::initialize(Map& map)
 {
-    m_texture.loadFromFile("data/worker_front.png");
-    m_sprite.setTexture(m_texture);
+    m_texture[0].loadFromFile("data/worker_front.png");
+	m_texture[1].loadFromFile("data/worker_back.png");
+	m_texture[2].loadFromFile("data/worker_right.png");
+    m_sprite.setTexture(m_texture[0]);
+	
     
     m_moveTileTexture.loadFromFile("data/move_tile.png");
     m_moveTileSprite.setTexture(m_moveTileTexture);
@@ -57,6 +60,24 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
             
             float angle = atan2f(dy, dx);
             m_sprite.move(m_speed * cosf(angle) * dt, m_speed * sinf(angle) * dt);
+            
+			/*if (angle > 3.14f * 7.f / 4.f && angle < 3.14f / 4.f) { // right
+                m_sprite.setTexture(m_texture[2]);
+                m_sprite.setScale(1.f, 1.f);
+			}
+			else if (angle > 3.14f / 4.f && angle < 3.14f * (3.f/4.f)) { // back
+                m_sprite.setTexture(m_texture[1]);
+                m_sprite.setScale(1.f, 1.f);
+			}
+			else if (angle > 3.14f * 3.f/4.f && angle < 3.14f * 5.f/4.f) { // left
+				m_sprite.setTexture(m_texture[2]);
+				m_sprite.setScale(-1.f, 1.f);
+			}
+			else if (angle > 3.14f * 5.f / 4.f && angle < 3.14f * 7.f / 4.f) { // front
+                m_sprite.setTexture(m_texture[0]);
+                m_sprite.setScale(1.f, 1.f);
+			}*/
+
         } break;
         case CommandType::Place:
         {

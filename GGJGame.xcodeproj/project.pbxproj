@@ -30,6 +30,7 @@
 		F1CC0E581C5E1BE500FA43FA /* Tower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E571C5E1BE500FA43FA /* Tower.cpp */; };
 		F1CC0E5B1C5E87CE00FA43FA /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */; };
 		F1CC0E5E1C5EAF3300FA43FA /* Bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E5C1C5EAF3300FA43FA /* Bar.cpp */; };
+		F1CC0E611C5EC66900FA43FA /* BossGhost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E5F1C5EC66800FA43FA /* BossGhost.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		F1CC0E5A1C5E87CE00FA43FA /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		F1CC0E5C1C5EAF3300FA43FA /* Bar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bar.cpp; sourceTree = "<group>"; };
 		F1CC0E5D1C5EAF3300FA43FA /* Bar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bar.h; sourceTree = "<group>"; };
+		F1CC0E5F1C5EC66800FA43FA /* BossGhost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BossGhost.cpp; sourceTree = "<group>"; };
+		F1CC0E601C5EC66900FA43FA /* BossGhost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossGhost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 		F14E70EB1C5B4A13009A4D6C /* GGJGame */ = {
 			isa = PBXGroup;
 			children = (
+				F1CC0E5F1C5EC66800FA43FA /* BossGhost.cpp */,
+				F1CC0E601C5EC66900FA43FA /* BossGhost.h */,
 				F1CC0E571C5E1BE500FA43FA /* Tower.cpp */,
 				F1CC0E561C5E1B4C00FA43FA /* Tower.h */,
 				F1CC0E4F1C5DF52800FA43FA /* ProjectileType.h */,
@@ -264,6 +269,7 @@
 			files = (
 				F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */,
 				F1CC0E481C5DCCD700FA43FA /* Zombie.cpp in Sources */,
+				F1CC0E611C5EC66900FA43FA /* BossGhost.cpp in Sources */,
 				F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */,
 				F1CC0E331C5D47BC00FA43FA /* Enemy.cpp in Sources */,
 				F1CC0E341C5D47BC00FA43FA /* EnemyPool.cpp in Sources */,

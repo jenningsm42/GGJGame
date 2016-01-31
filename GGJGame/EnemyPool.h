@@ -5,7 +5,15 @@
 #include "Currency.h"
 #include "Announcements.h"
 #include "Enemy.h"
+#include "BossGhost.h"
 #include "GameObject.h"
+#include "Application.h"
+#include "Ghost.h"
+#include "Zombie.h"
+#include <string>
+#include <cmath>
+#include "Bar.h"
+
 class Application;
 class Ritual;
 class Bar;
@@ -25,7 +33,8 @@ public:
     
 private:
 	sf::Clock m_zombieClock;
-	sf::Clock m_ghostClock;
+    sf::Clock m_ghostClock;
+    sf::Clock m_bossClock;
     sf::Clock m_waveClock;
     sf::Music m_bg;
     sf::SoundBuffer m_zombieDeathBuf;
@@ -37,8 +46,8 @@ private:
     bool m_inWave = false;
     float m_spawnRate;
 	std::vector<Enemy*> m_enemies;
+	sf::Texture m_enemyTextures[3];
     std::vector<Bar*> m_bars;
-	sf::Texture m_enemyTextures[2];
 };
 
 #endif
