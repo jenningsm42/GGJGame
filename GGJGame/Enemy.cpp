@@ -74,4 +74,5 @@ Enemy& Enemy::operator=(const Enemy& other)
     m_sprite = other.m_sprite;
     m_speed = other.m_speed;
     m_health = other.m_health;
+	return *this;
 }

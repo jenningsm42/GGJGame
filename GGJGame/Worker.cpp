@@ -31,7 +31,7 @@ void Worker::release()
 {
 }
 
-void Worker::update(float dt, )
+void Worker::update(float dt)
 {
     switch(m_curCommand.commandType)
     {
