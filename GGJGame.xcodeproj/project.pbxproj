@@ -22,6 +22,8 @@
 		F1CC0E3A1C5D5DA200FA43FA /* ProjectilePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E381C5D5DA200FA43FA /* ProjectilePool.cpp */; };
 		F1CC0E3E1C5D817D00FA43FA /* Shooter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E3B1C5D817D00FA43FA /* Shooter.cpp */; };
 		F1CC0E421C5D9A0800FA43FA /* WeaponPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */; };
+		F1CC0E481C5DCCD700FA43FA /* Zombie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E461C5DCCD700FA43FA /* Zombie.cpp */; };
+		F1CC0E4B1C5DCCE200FA43FA /* Ghost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E491C5DCCE200FA43FA /* Ghost.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,10 @@
 		F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponPool.cpp; sourceTree = "<group>"; };
 		F1CC0E441C5D9A6500FA43FA /* WeaponPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeaponPool.h; sourceTree = "<group>"; };
 		F1CC0E451C5DA08100FA43FA /* WeaponTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeaponTypes.h; sourceTree = "<group>"; };
+		F1CC0E461C5DCCD700FA43FA /* Zombie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Zombie.cpp; sourceTree = "<group>"; };
+		F1CC0E471C5DCCD700FA43FA /* Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombie.h; sourceTree = "<group>"; };
+		F1CC0E491C5DCCE200FA43FA /* Ghost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ghost.cpp; sourceTree = "<group>"; };
+		F1CC0E4A1C5DCCE200FA43FA /* Ghost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ghost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,10 @@
 		F14E70EB1C5B4A13009A4D6C /* GGJGame */ = {
 			isa = PBXGroup;
 			children = (
+				F1CC0E491C5DCCE200FA43FA /* Ghost.cpp */,
+				F1CC0E4A1C5DCCE200FA43FA /* Ghost.h */,
+				F1CC0E461C5DCCD700FA43FA /* Zombie.cpp */,
+				F1CC0E471C5DCCD700FA43FA /* Zombie.h */,
 				F1CC0E451C5DA08100FA43FA /* WeaponTypes.h */,
 				F1CC0E441C5D9A6500FA43FA /* WeaponPool.h */,
 				F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */,
@@ -221,9 +231,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1CC0E1E1C5C78B200FA43FA /* Map.cpp in Sources */,
+				F1CC0E481C5DCCD700FA43FA /* Zombie.cpp in Sources */,
 				F14E70F21C5B4A13009A4D6C /* main.cpp in Sources */,
 				F1CC0E331C5D47BC00FA43FA /* Enemy.cpp in Sources */,
 				F1CC0E341C5D47BC00FA43FA /* EnemyPool.cpp in Sources */,
+				F1CC0E4B1C5DCCE200FA43FA /* Ghost.cpp in Sources */,
 				F14E70EF1C5B4A13009A4D6C /* (null) in Sources */,
 				F1CC0E3A1C5D5DA200FA43FA /* ProjectilePool.cpp in Sources */,
 				F1CC0E2E1C5D2FCE00FA43FA /* WeaponsUI.cpp in Sources */,
