@@ -2,16 +2,21 @@
 
 ProjectilePool::ProjectilePool()
 {
-    m_projectileTexture.loadFromFile("data/projectile.png");
+    m_projectileTexture[0].loadFromFile("data/projectile.png");
+	m_projectileTexture[1].loadFromFile("data/acid.png");
 }
 
 ProjectilePool::~ProjectilePool()
 {
 }
 
-void ProjectilePool::spawnProjectile(float x, float y, Enemy *target)
+void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, projectileType type)
 {
-    m_projectiles.push_back(Projectile(m_projectileTexture, sf::Vector2f(x, y), target));
+	switch (type) {
+	case(projectileType::Energy) : m_projectiles.push_back(Projectile(m_projectileTexture[0], sf::Vector2f(x, y), target)); break;
+	case(projectileType::Acid): m_projectiles.push_back(Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target)); break;
+	}
+    
 }
 
 void ProjectilePool::update(float dt)
