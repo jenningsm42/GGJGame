@@ -15,7 +15,10 @@ public:
 	void initialize(Map&);
 	void update(float dt, Application*, Map&);
 	void draw(sf::RenderWindow&);
-
+    
+    int size();
+    Enemy& getEnemy(int index);
+    
 private:
 	sf::Clock clock;
 	sf::Clock initialClock;

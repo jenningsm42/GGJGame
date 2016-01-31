@@ -38,10 +38,15 @@ bool Projectile::update(float dt)
     
     float angle = atan2f(dy, dx);
 
-    m_sprite.setRotation(angle);
+    m_sprite.setRotation(360.f * angle / (2.f*3.14159f));
     m_sprite.move(m_speed * cosf(angle) * dt, m_speed * sinf(angle) * dt);
     
     return false;
+}
+
+void Projectile::draw(sf::RenderWindow& window)
+{
+    window.draw(m_sprite);
 }
 
 const sf::FloatRect Projectile::getBounds() const

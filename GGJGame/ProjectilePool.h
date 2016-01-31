@@ -9,7 +9,10 @@ public:
     ProjectilePool();
     ~ProjectilePool();
     
+    void spawnProjectile(float x, float y, Enemy* target);
+    
     void update(float dt);
+    void draw(sf::RenderWindow&);
     
 private:
     sf::Texture m_projectileTexture;
