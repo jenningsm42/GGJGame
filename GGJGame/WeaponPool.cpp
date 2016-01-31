@@ -11,7 +11,7 @@ WeaponPool::~WeaponPool()
 
 void WeaponPool::initialize(Map &, Application *)
 {
-	m_texture[0].loadFromFile("data/energy_shooter");
+	m_texture[0].loadFromFile("data/energy_shooter.png");
 }
 
 void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
@@ -27,9 +27,12 @@ void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
 
 void WeaponPool::update(float dt, Application *, Map & map)
 {
+    for(int i = 0; i < weapons.size(); i++)
+        weapons[i]->update(dt);
 }
 
-void WeaponPool::draw(sf::RenderWindow &)
+void WeaponPool::draw(sf::RenderWindow& window)
 {
-
+    for(int i = 0; i < weapons.size(); i++)
+        weapons[i]->draw(window);
 }

@@ -25,7 +25,7 @@ private:
     int m_selectedWorker;
     sf::Texture m_selectedTexture;
     sf::Sprite m_selectedSprite;
-	bool placeWeapon = false;
+    WeaponType m_placingWeaponType;
     
     bool validMove(float x, float y, Map&);
 };
