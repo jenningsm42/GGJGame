@@ -60,5 +60,5 @@ int EnemyPool::size()
 
 Enemy& EnemyPool::getEnemy(int index)
 {
-    return enemies[index];
+    return *enemies[index];
 }

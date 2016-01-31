@@ -19,9 +19,6 @@ public:
 	void update(float dt, Map &map);
 	void draw(sf::RenderWindow&) override;
 
-	const sf::FloatRect getBounds() const;
-	const sf::Vector2f getCenter() const;
-
 	Ghost& operator=(const Ghost&);
 
 };

@@ -52,15 +52,6 @@ void Zombie::draw(sf::RenderWindow &window)
 	window.draw(m_sprite);
 }
 
-const sf::FloatRect Zombie::getBounds() const
-{
-	return m_sprite.getGlobalBounds();
-}
-
-const sf::Vector2f Zombie::getCenter() const
-{
-	return m_sprite.getPosition() + 0.5f * sf::Vector2f(m_sprite.getLocalBounds().width, m_sprite.getLocalBounds().height);
-}
 
 Zombie& Zombie::operator=(const Zombie& other)
 {

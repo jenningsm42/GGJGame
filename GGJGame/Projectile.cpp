@@ -64,4 +64,5 @@ Projectile& Projectile::operator=(const Projectile& other)
     m_speed = other.m_speed;
     m_sprite = other.m_sprite;
     m_target = other.m_target;
+	return *this;
 }

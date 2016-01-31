@@ -53,16 +53,6 @@ void Ghost::draw(sf::RenderWindow &window)
 }
 
 
-const sf::FloatRect Ghost::getBounds() const
-{
-	return m_sprite.getGlobalBounds();
-}
-
-const sf::Vector2f Ghost::getCenter() const
-{
-	return m_sprite.getPosition() + 0.5f * sf::Vector2f(m_sprite.getLocalBounds().width, m_sprite.getLocalBounds().height);
-}
-
 Ghost& Ghost::operator=(const Ghost& other)
 {
 	m_sprite = other.m_sprite;

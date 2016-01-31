@@ -14,6 +14,9 @@ public:
 	virtual void update(float dt, Map &map) {}
 	virtual void draw(sf::RenderWindow&) {}
 
+	const sf::FloatRect getBounds() const;
+	const sf::Vector2f getCenter() const;
+
 	void damage();
 	int getHealth();
 
