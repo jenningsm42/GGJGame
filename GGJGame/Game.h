@@ -25,7 +25,6 @@ public:
 
 private:
     sf::Music m_ambience;
-    sf::Music m_bg;
     Map m_map;
 	Ritual m_ritual;
     WorkerPool m_workerPool;

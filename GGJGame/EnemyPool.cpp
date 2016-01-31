@@ -19,6 +19,10 @@ void EnemyPool::initialize(Map &)
 {
 	m_enemyTextures[0].loadFromFile("data/zombie.png");
 	m_enemyTextures[1].loadFromFile("data/ghost.png");
+    m_zombieDeathBuf.loadFromFile("data/tribal_3_bip.wav");
+    m_ghostDeathBuf.loadFromFile("data/Tribal_2_bip.wav");
+    m_zdSound.setBuffer(m_zombieDeathBuf);
+    m_gdSound.setBuffer(m_ghostDeathBuf);
 }
 
 void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency, Announcements& announcements, Ritual* ritual)
@@ -29,12 +33,12 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
         m_spawnRate = expf(-.55 * (float)m_waveCount);
         m_waveCount++;
         
+        if(m_bg.getStatus() != sf::Sound::Playing && m_bg.openFromFile("data/Spirit_Defense_Music_fade.wav")) {
+            m_bg.setVolume(80);
+            m_bg.play();
+        }
+        
         announcements.setAnnouncement("Wave  " + std::to_string(m_waveCount) + "  starting..");
-		sf::SoundBuffer warHorn;
-		warHorn.loadFromFile("data/enemy_war_horn_bip.wav");
-		sf::Sound sound;
-		sound.setBuffer(warHorn);
-		sound.play();
     }
     
     if(m_inWave)
@@ -43,6 +47,7 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
         {
             m_inWave = false;
             m_waveClock.restart();
+            announcements.setAnnouncement("Wave  " + std::to_string(m_waveCount) + "  finished!");
         }
         
         if(m_waveClock.getElapsedTime().asSeconds() <= 60.f)
@@ -77,6 +82,12 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
             if(m_enemies[i]->getHealth() <= 0)
             {
                 currency.addCurrency(25);
+                
+                switch(m_enemies[i]->getType())
+                {
+                    case 0: m_zdSound.play(); break;
+                    case 1: m_gdSound.play(); break;
+                }
                 
                 m_enemies[i]->release();
                 delete m_enemies[i];

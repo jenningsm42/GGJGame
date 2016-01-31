@@ -5,6 +5,7 @@ Zombie::Zombie()
 {
 	m_speed = 45;
 	m_health = 100;
+    m_type = 0;
 
 }
 
@@ -13,6 +14,7 @@ Zombie::Zombie(const Zombie& other)
     m_sprite = other.m_sprite;
     m_speed = other.m_speed;
     m_health = other.m_health;
+    m_type = 0;
 }
 
 Zombie::~Zombie()
@@ -29,17 +31,11 @@ void Zombie::initialize(Map &map, sf::Texture &m_texture)
 
 	float length = distLength(rng);
 	float angle = distAngle(rng);
-	m_sprite.setPosition(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
+    m_sprite.setPosition(length * cosf(angle) + map.getWidth() / 2, length * sinf(angle) + map.getHeight() / 2);
 }
 
 void Zombie::release()
 {
-	sf::SoundBuffer deathSound;
-	deathSound.loadFromFile("data/Tribal_3_bip.wav");
-	sf::Sound sound;
-	sound.setBuffer(deathSound);
-	sound.setVolume(60);
-	sound.play();
 }
 
 void Zombie::update(float dt, Map &map)

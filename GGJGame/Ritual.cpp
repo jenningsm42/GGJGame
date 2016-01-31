@@ -38,7 +38,6 @@ void Ritual::initialize(Map &map)
                               m_offsetY - m_radius - 150);
 
 	//For sound:
-	sf::SoundBuffer fireSound;
 	fireSound.loadFromFile("data/Fire_sound_bip.wav");
 	sf::Sound sound;
 	sound.setBuffer(fireSound);
@@ -46,7 +45,6 @@ void Ritual::initialize(Map &map)
 	sound.setLoop(true);
 	sound.play();
 
-	sf::SoundBuffer tribalSound;
 	tribalSound.loadFromFile("data/Tribal_Chantss_bip.wav");
 	sf::Sound tribe;
 	tribe.setBuffer(tribalSound);

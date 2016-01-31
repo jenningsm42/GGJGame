@@ -138,6 +138,8 @@ bool WorkerPool::validMove(float x, float y, Map& map)
     
     for(int i = 0; i < m_workerCount; i++)
     {
+        if(m_workers[i].getHealth() <= 0) continue;
+        
         if(i != m_selectedWorker && m_workers[i].getBounds().contains(x, y))
             return false;
     }

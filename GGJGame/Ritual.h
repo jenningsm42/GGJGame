@@ -27,6 +27,8 @@ private:
     sf::Sprite m_logSprite;
     sf::Texture m_chiefTexture;
     sf::Sprite m_chiefSprite;
+    sf::SoundBuffer fireSound;
+    sf::SoundBuffer tribalSound;
     int m_ritualistCount;
     bool m_ritualistsAlive[5];
     const float m_radius;

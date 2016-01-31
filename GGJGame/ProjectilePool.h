@@ -18,6 +18,12 @@ public:
 private:
     sf::Texture m_projectileTexture[3];
     std::vector<Projectile*> m_projectiles;
+    sf::SoundBuffer energy;
+    sf::SoundBuffer acid;
+    sf::SoundBuffer dart;
+    sf::Sound eSound;
+    sf::Sound aSound;
+    sf::Sound dSound;
 };
 
 #endif // PROJECTILEPOOL_H

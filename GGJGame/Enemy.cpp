@@ -10,6 +10,11 @@ int Enemy::getHealth()
 	return m_health;
 }
 
+int Enemy::getType()
+{
+    return m_type;
+}
+
 void Enemy::damageOverTime(int damage)
 {
 	DotDuration = 5;

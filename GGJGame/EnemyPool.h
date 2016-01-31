@@ -26,7 +26,12 @@ public:
 private:
 	sf::Clock m_zombieClock;
 	sf::Clock m_ghostClock;
-	sf::Clock m_waveClock;
+    sf::Clock m_waveClock;
+    sf::Music m_bg;
+    sf::SoundBuffer m_zombieDeathBuf;
+    sf::SoundBuffer m_ghostDeathBuf;
+    sf::Sound m_zdSound;
+    sf::Sound m_gdSound;
 	int m_enemyCount = 0;
     int m_waveCount = 0;
     bool m_inWave = false;

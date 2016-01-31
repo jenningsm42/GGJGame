@@ -22,6 +22,8 @@ public:
 
 	void damage(int amount);
 	int getHealth();
+    
+    int getType();
 
 	void damageOverTime(int damage);
 	void slow();
@@ -34,6 +36,7 @@ protected:
 	int DotDuration = 0;
     int m_dotDamage = 0;
 	int slowDuration = 0;
+    int m_type;
 };
 
 #endif

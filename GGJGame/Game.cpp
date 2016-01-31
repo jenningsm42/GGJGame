@@ -26,10 +26,6 @@ void Game::initialize(Application* app)
 		m_ambience.setVolume(50);
 		m_ambience.play();
 	}
-    if(m_bg.openFromFile("data/Spirit_Defense_Music_fade.wav")) {
-        m_bg.setVolume(80);
-        m_bg.play();
-    }
 }
 
 void Game::release()
