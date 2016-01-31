@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="Announcements.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BossGhost.cpp" />
     <ClCompile Include="Currency.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameOver.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Announcements.h" />
+    <ClInclude Include="BossGhost.h" />
     <ClInclude Include="Currency.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Tower.h" />

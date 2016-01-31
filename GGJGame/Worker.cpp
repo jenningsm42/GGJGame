@@ -12,8 +12,11 @@ Worker::~Worker()
 
 void Worker::initialize(Map& map)
 {
-    m_texture.loadFromFile("data/worker_front.png");
-    m_sprite.setTexture(m_texture);
+    m_texture[0].loadFromFile("data/worker_front.png");
+	m_texture[1].loadFromFile("data/worker_back.png");
+	m_texture[2].loadFromFile("data/worker_s")
+    m_sprite.setTexture(m_texture[0]);
+	
     
     m_moveTileTexture.loadFromFile("data/move_tile.png");
     m_moveTileSprite.setTexture(m_moveTileTexture);
@@ -44,6 +47,8 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
             
             float dx = m_curCommand.x - getCenter().x;
             float dy = m_curCommand.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
+
+
             
             if(fabsf(dx) < 5.f && fabsf(dy) < 5.f)
             {

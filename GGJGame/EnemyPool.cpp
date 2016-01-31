@@ -1,10 +1,5 @@
 #include "EnemyPool.h"
-#include "Application.h"
-#include "Ghost.h"
-#include "Zombie.h"
-#include "Ritual.h"
-#include <string>
-#include <cmath>
+
 
 EnemyPool::EnemyPool() : m_spawnRate(1.f)
 {
@@ -18,6 +13,7 @@ void EnemyPool::initialize(Map &)
 {
 	m_enemyTextures[0].loadFromFile("data/zombie.png");
 	m_enemyTextures[1].loadFromFile("data/ghost.png");
+	m_enemyTextures[2].loadFromFile("data/image.png");
 }
 
 void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency, Announcements& announcements, Ritual* ritual)
@@ -58,6 +54,12 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
                 m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
                 m_ghostClock.restart();
             }
+			if (m_waveCount >= 3 && m_bossClock.getElapsedTime().asSeconds() > 22.f * m_spawnRate) {
+				m_enemies.push_back(new BossGhost());
+				m_enemies.back()->initialize(map, m_enemyTextures[1]);
+				m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
+				m_ghostClock.restart();
+			}
         }
         
         for (int i = 0; i < m_enemies.size(); i++) {
