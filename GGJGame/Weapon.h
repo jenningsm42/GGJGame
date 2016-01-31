@@ -6,6 +6,7 @@
 #include "WeaponTypes.h"
 #include "EnemyPool.h"
 #include "ProjectilePool.h"
+#include "ProjectileType.h"
 
 class Weapon : public GameObject
 {

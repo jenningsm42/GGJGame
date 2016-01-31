@@ -19,7 +19,7 @@ void Shooter::release()
 }
 
 void Shooter::update(float dt, EnemyPool& enemyPool, ProjectilePool& projectilePool)
-{
+{	
     static sf::Clock timer;
     if(timer.getElapsedTime().asSeconds() >= m_delay)
     {
@@ -34,7 +34,7 @@ void Shooter::update(float dt, EnemyPool& enemyPool, ProjectilePool& projectileP
             
             if(lenSq < m_rangeSq)
             {
-                projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i));
+                projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i), projectileType::Energy);
                 timer.restart();
             }
         }
