@@ -1,19 +1,18 @@
 #pragma once
-#include "GameObject.h"
 #include "Map.h"
 #include "EnemyPool.h"
 
-class Ritual : public GameObject 
+class Ritual 
 {
 public:
 	Ritual();
 	~Ritual();
 
 	void initialize(Map &);
-	virtual void release() override;
+	void release();
 
-    bool update(float dt, EnemyPool&);
-	virtual void draw(sf::RenderWindow &) override;
+	bool update(float dt, EnemyPool&);
+	void draw(sf::RenderWindow &);
     
     bool isAlive(int index);
     sf::Vector2f getCenter(int index);

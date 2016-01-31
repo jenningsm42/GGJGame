@@ -10,7 +10,6 @@
 #include "Application.h"
 #include "Ghost.h"
 #include "Zombie.h"
-#include "Ritual.h"
 #include <string>
 #include <cmath>
 #include "Bar.h"
@@ -42,9 +41,8 @@ private:
     bool m_inWave = false;
     float m_spawnRate;
 	std::vector<Enemy*> m_enemies;
-	sf::Texture m_enemyTextures[3];
-    std::vector<Bar*> m_bars;
 	sf::Texture m_enemyTextures[2];
+    std::vector<Bar*> m_bars;
 };
 
 #endif

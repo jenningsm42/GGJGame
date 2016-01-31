@@ -15,7 +15,7 @@ void Worker::initialize(Map& map)
 {
     m_texture[0].loadFromFile("data/worker_front.png");
 	m_texture[1].loadFromFile("data/worker_back.png");
-	m_texture[2].loadFromFile("data/worker_s.png");
+	m_texture[2].loadFromFile("data/worker_right.png");
     m_sprite.setTexture(m_texture[0]);
 	
     
