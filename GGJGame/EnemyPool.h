@@ -2,6 +2,7 @@
 #define ENEMYPOOL_H
 #include <SFML/Graphics.hpp>
 #include "Map.h"
+#include "Currency.h"
 #include "Enemy.h"
 #include "GameObject.h"
 class Application;
@@ -13,7 +14,7 @@ public:
 	~EnemyPool();
 
 	void initialize(Map&);
-	void update(float dt, Application*, Map&);
+	void update(float dt, Application*, Map&, Currency&);
 	void draw(sf::RenderWindow&);
     
     int size();

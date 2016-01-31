@@ -15,6 +15,9 @@ void Worker::initialize(Map& map)
     m_texture.loadFromFile("data/worker_front.png");
     m_sprite.setTexture(m_texture);
     
+    m_moveTileTexture.loadFromFile("data/move_tile.png");
+    m_moveTileSprite.setTexture(m_moveTileTexture);
+    
     std::random_device rd;
     std::mt19937 rng(rd());
     std::uniform_int_distribution<int> distLength(200, 300);
@@ -37,6 +40,8 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
     {
         case CommandType::Move:
         {
+            m_moveTileSprite.setPosition(m_curCommand.x - 32, m_curCommand.y - 32);
+            
             float dx = m_curCommand.x - getCenter().x;
             float dy = m_curCommand.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
             
@@ -54,6 +59,8 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
         } break;
         case CommandType::Place:
         {
+            m_moveTileSprite.setPosition(m_curCommand.x - 32, m_curCommand.y - 32);
+            
 			float dx = m_curCommand.x - getCenter().x;
 			float dy = m_curCommand.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
 
@@ -89,6 +96,9 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
 
 void Worker::draw(sf::RenderWindow& window)
 {
+    if(m_curCommand.commandType != CommandType::None)
+        window.draw(m_moveTileSprite);
+    
     window.draw(m_sprite);
 }
 

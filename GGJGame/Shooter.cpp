@@ -34,8 +34,9 @@ void Shooter::update(float dt, EnemyPool& enemyPool, ProjectilePool& projectileP
             
             if(lenSq < m_rangeSq)
             {
-                projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i), projectileType::Energy);
+                projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i), ProjectileType::Energy);
                 timer.restart();
+                break;
             }
         }
     }

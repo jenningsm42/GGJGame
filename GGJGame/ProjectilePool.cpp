@@ -10,11 +10,15 @@ ProjectilePool::~ProjectilePool()
 {
 }
 
-void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, projectileType type)
+void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, ProjectileType type)
 {
 	switch (type) {
-	case(projectileType::Energy) : m_projectiles.push_back(Projectile(m_projectileTexture[0], sf::Vector2f(x, y), target)); break;
-	case(projectileType::Acid): m_projectiles.push_back(Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target)); break;
+	case ProjectileType::Energy:
+            m_projectiles.push_back(Projectile(m_projectileTexture[0], sf::Vector2f(x, y), target));
+            break;
+	case ProjectileType::Acid:
+            m_projectiles.push_back(Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target));
+            break;
 	}
     
 }

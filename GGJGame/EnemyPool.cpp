@@ -18,7 +18,7 @@ void EnemyPool::initialize(Map &)
 	m_enemyTextures[1].loadFromFile("data/ghost.png");
 }
 
-void EnemyPool::update(float dt, Application *app, Map &map)
+void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency)
 {
 	sf::Time initialTime = initialClock.getElapsedTime();
 
@@ -39,6 +39,7 @@ void EnemyPool::update(float dt, Application *app, Map &map)
             enemies[i]->update(dt, map);
             if(enemies[i]->getHealth() <= 0)
             {
+                currency.addCurrency(25);
                 enemies[i]->release();
                 enemies.erase(enemies.begin() + i);
             }

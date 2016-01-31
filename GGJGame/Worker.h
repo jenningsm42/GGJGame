@@ -30,6 +30,8 @@ private:
     Command m_curCommand;
     const float m_speed;
     int m_health;
+    sf::Texture m_moveTileTexture;
+    sf::Sprite m_moveTileSprite;
 };
 
 #endif // WORKER_H

@@ -10,7 +10,7 @@ public:
     ProjectilePool();
     ~ProjectilePool();
     
-    void spawnProjectile(float x, float y, Enemy* target, projectileType type);
+    void spawnProjectile(float x, float y, Enemy* target, ProjectileType type);
     void update(float dt);
     void draw(sf::RenderWindow&);
     

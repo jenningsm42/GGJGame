@@ -30,10 +30,7 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
         if(m_placingWeaponType == WeaponType::None)
         {
             if(currency.getPrice(weaponToPlace.weaponType) <= currency.getCurrency())
-            {
-                currency.deductCurrency(currency.getPrice(weaponToPlace.weaponType));
                 m_placingWeaponType = weaponToPlace.weaponType;
-            }
         }
     }
     
@@ -82,6 +79,8 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
 		
         if(validMove(mpos.x, mpos.y, map))
         {
+            currency.deductCurrency(currency.getPrice(m_placingWeaponType));
+            
             Command c;
             c.commandType = CommandType::Place;
             c.weaponType = m_placingWeaponType;
@@ -99,7 +98,7 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
         if(m_workers[i].getHealth() <= 0) continue;
         
         m_workers[i].update(dt, map, weaponPool, enemyPool);
-        if(m_workers[i].getHealth() <= 0) m_selectedWorker = -1;
+        if(m_workers[i].getHealth() <= 0 && i == m_selectedWorker) m_selectedWorker = -1;
         
         if(m_selectedWorker == i)
             m_selectedSprite.setPosition(m_workers[i].getCenter().x - m_selectedTexture.getSize().x / 2,
@@ -137,7 +136,7 @@ bool WorkerPool::validMove(float x, float y, Map& map)
     
     for(int i = 0; i < m_workerCount; i++)
     {
-        if(m_workers[i].getBounds().contains(x, y))
+        if(i != m_selectedWorker && m_workers[i].getBounds().contains(x, y))
             return false;
     }
     

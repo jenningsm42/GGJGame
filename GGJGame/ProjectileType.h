@@ -1,8 +1,8 @@
-#ifndef projectileTYPE_H
-#define projectileTYPE_H
+#ifndef PROJECTILETYPE_H
+#define PROJECTILETYPE_H
 
-enum struct projectileType {
+enum struct ProjectileType {
 	Energy,
 	Acid
 };
-#endif // projectileTYPE_H
+#endif // PROJECTILETYPE_H

@@ -35,8 +35,9 @@ void Totem::update(float dt, EnemyPool& enemyPool, ProjectilePool& projectilePoo
 
 			if (lenSq < m_rangeSq)
 			{
-				projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i), projectileType::Acid);
+				projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i), ProjectileType::Acid);
 				timer.restart();
+                break;
 			}
 		}
 	}
