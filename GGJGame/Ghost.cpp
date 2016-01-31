@@ -34,6 +34,12 @@ void Ghost::initialize(Map &map, sf::Texture &m_texture)
 
 void Ghost::release()
 {
+	sf::SoundBuffer deathSound;
+	deathSound.loadFromFile("data/Tribal_2_bip.wav");
+	sf::Sound sound;
+	sound.setBuffer(deathSound);
+	sound.setVolume(60);
+	sound.play();
 }
 
 void Ghost::update(float dt, Map &map)

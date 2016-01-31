@@ -22,8 +22,9 @@ void Game::initialize(Application* app)
 
 	//For music:
 	sf::Music ambience;
-	if (ambience.openFromFile("data/music")){
+	if (ambience.openFromFile("data/deep_forest_bip.wav")){
 		ambience.setLoop(true);
+		ambience.setVolume(50);
 		ambience.play();
 	}
 }

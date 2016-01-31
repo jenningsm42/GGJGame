@@ -17,16 +17,17 @@ void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, Projectile
 	case ProjectileType::Energy: {
 		m_projectiles.push_back(new Projectile(m_projectileTexture[0], sf::Vector2f(x, y), target, type));
 		sf::SoundBuffer energy;
-		energy.loadFromFile("sound");
+		energy.loadFromFile("data/energy_projectile_bip.wav");
 		sf::Sound sound;
 		sound.setBuffer(energy);
+		sound.setVolume(30);
 		sound.play();
 		break; 
 	}
 	case ProjectileType::Acid: {
 		m_projectiles.push_back(new Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target, type));
 		sf::SoundBuffer acid;
-		acid.loadFromFile("sound");
+		acid.loadFromFile("data/Quicksand_sound_bip.wav");
 		sf::Sound sound;
 		sound.setBuffer(acid);
 		sound.play();
@@ -35,7 +36,7 @@ void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, Projectile
 	case ProjectileType::Dart: {
 		m_projectiles.push_back(new Projectile(m_projectileTexture[2], sf::Vector2f(x, y), target, type));
 		sf::SoundBuffer dart;
-		dart.loadFromFile("sound");
+		dart.loadFromFile("data/Blowdard_projectile_bip.wav");
 		sf::Sound sound;
 		sound.setBuffer(dart);
 		sound.play();

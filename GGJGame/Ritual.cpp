@@ -39,7 +39,7 @@ void Ritual::initialize(Map &map)
 
 	//For sound:
 	sf::SoundBuffer fireSound;
-	fireSound.loadFromFile("fireSound");
+	fireSound.loadFromFile("data/Fire_sound_bip.wav");
 	sf::Sound sound;
 	sound.setBuffer(fireSound);
 	sound.setVolume(75);
@@ -47,7 +47,7 @@ void Ritual::initialize(Map &map)
 	sound.play();
 
 	sf::SoundBuffer tribalSound;
-	tribalSound.loadFromFile("fireSound");
+	tribalSound.loadFromFile("data/Tribal_Chants_bip.wav");
 	sf::Sound tribe;
 	tribe.setBuffer(tribalSound);
 	tribe.setPlayingOffset(sf::seconds(5));

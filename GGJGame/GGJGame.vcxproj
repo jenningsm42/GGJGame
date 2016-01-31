@@ -125,6 +125,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Currency.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ProjectilePool.cpp" />
@@ -145,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Announcements.h" />
     <ClInclude Include="Currency.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Tower.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Command.h" />
