@@ -19,8 +19,13 @@ public:
 	void damage();
 	int getHealth();
 
+	void damageOverTime();
+	void slow();
+
 protected:
 	int m_health;
 	float m_speed;
+	int DotDuration = 0;
+	int slowDuration = 0;
 };
 #endif

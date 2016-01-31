@@ -3,6 +3,7 @@
 
 enum struct ProjectileType {
 	Energy,
-	Acid
+	Acid,
+	Dart
 };
 #endif // PROJECTILETYPE_H

@@ -15,7 +15,7 @@ public:
     void draw(sf::RenderWindow&);
     
 private:
-    sf::Texture m_projectileTexture[2];
+    sf::Texture m_projectileTexture[3];
     std::vector<Projectile> m_projectiles;
 };
 

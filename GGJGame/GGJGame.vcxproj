@@ -121,12 +121,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Announcements.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Currency.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ProjectilePool.cpp" />
     <ClCompile Include="Totem.cpp" />
+    <ClCompile Include="Tower.cpp" />
     <ClCompile Include="Zombie.cpp" />
     <ClCompile Include="EnemyPool.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -140,6 +143,9 @@
     <ClCompile Include="WorkerPool.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Announcements.h" />
+    <ClInclude Include="Currency.h" />
+    <ClInclude Include="Tower.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Enemy.h" />

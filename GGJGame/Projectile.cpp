@@ -20,7 +20,7 @@ Projectile::~Projectile()
 {
 }
 
-bool Projectile::update(float dt)
+bool Projectile::update(float dt,ProjectileType type)
 {
     if(m_target == nullptr)
         return true;
@@ -32,8 +32,17 @@ bool Projectile::update(float dt)
     
     if(fabsf(dx) < 10.f && fabsf(dy) < 10.f)
     {
-        m_target->damage();
-        return true; // hit target
+		if (type == ProjectileType::Energy) {
+			m_target->damage();
+			return true; // hit target
+		}
+		if (type == ProjectileType::Acid) {
+			m_target->damageOverTime();
+			return true;
+		}
+		if (type == ProjectileType::Dart) {
+			m_target->slow();
+		}
     }
     
     float angle = atan2f(dy, dx);

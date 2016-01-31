@@ -4,6 +4,7 @@ ProjectilePool::ProjectilePool()
 {
     m_projectileTexture[0].loadFromFile("data/projectile.png");
 	m_projectileTexture[1].loadFromFile("data/acid.png");
+	m_projectileTexture[2].loadFromFile("data/projectile.png");
 }
 
 ProjectilePool::~ProjectilePool()
@@ -19,15 +20,17 @@ void ProjectilePool::spawnProjectile(float x, float y, Enemy *target, Projectile
 	case ProjectileType::Acid:
             m_projectiles.push_back(Projectile(m_projectileTexture[1], sf::Vector2f(x, y), target));
             break;
+	case ProjectileType::Dart:
+			m_projectiles.push_back(Projectile(m_projectileTexture[2], sf::Vector2f(x, y), target));
+			break;
 	}
-    
 }
 
-void ProjectilePool::update(float dt)
+void ProjectilePool::update(float dt, ProjectileType type)
 {
     for(int i = 0; i < m_projectiles.size(); i++)
     {
-        if(m_projectiles[i].update(dt))
+        if(m_projectiles[i].update(dt, type))
         {
             // projectile hit target
             m_projectiles.erase(m_projectiles.begin() + i);

@@ -1,6 +1,7 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 #include <SFML/Graphics.hpp>
+#include "ProjectileType.h"
 class Enemy;
 
 class Projectile
@@ -10,7 +11,7 @@ public:
     Projectile(const Projectile&);
     ~Projectile();
     
-    bool update(float dt);
+	bool update(float dt, ProjectileType type);
     void draw(sf::RenderWindow&);
     
     const sf::FloatRect getBounds() const;
