@@ -4,7 +4,7 @@ ProjectilePool::ProjectilePool()
 {
     m_projectileTexture[0].loadFromFile("data/projectile.png");
 	m_projectileTexture[1].loadFromFile("data/acid.png");
-	m_projectileTexture[2].loadFromFile("data/projectile.png");
+	m_projectileTexture[2].loadFromFile("data/dart.png");
 }
 
 ProjectilePool::~ProjectilePool()

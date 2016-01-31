@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Ghost.h"
 #include "Zombie.h"
+#include "Ritual.h"
 #include <string>
 
 EnemyPool::EnemyPool()
@@ -18,9 +19,9 @@ void EnemyPool::initialize(Map &)
 	m_enemyTextures[1].loadFromFile("data/ghost.png");
 }
 
-void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency, Announcements& announcements)
+void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency, Announcements& announcements, Ritual* ritual)
 {
-	if (m_waveClock.getElapsedTime().asSeconds() > 30.f && !m_inWave) {
+	if (m_waveClock.getElapsedTime().asSeconds() > 3.f && !m_inWave) {//todo
         m_inWave = true;
         m_waveClock.restart();
         m_waveCount++;
@@ -41,11 +42,13 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
             if (m_zombieClock.getElapsedTime().asSeconds() > 5.f) {
                 m_enemies.push_back(new Zombie());
                 m_enemies.back()->initialize(map, m_enemyTextures[0]);
+                m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
                 m_zombieClock.restart();
             }
             if (m_ghostClock.getElapsedTime().asSeconds() > 15.f && m_waveCount >= 2) {
                 m_enemies.push_back(new Ghost());
                 m_enemies.back()->initialize(map, m_enemyTextures[1]);
+                m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
                 m_ghostClock.restart();
             }
         }
@@ -58,6 +61,25 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
                 currency.addCurrency(25);
                 m_enemies[i]->release();
                 m_enemies.erase(m_enemies.begin() + i);
+            }
+            
+            float dx = map.getWidth() / 2 - m_enemies[i]->getCenter().x;
+            float dy = map.getHeight() / 2 - m_enemies[i]->getCenter().y;
+            float dist = dx*dx + dy*dy;
+            
+            if(dist < 400.f*400.f)
+            {
+                if(m_enemies[i]->getAssignedRitualist() == -1 || !ritual->isAlive(m_enemies[i]->getAssignedRitualist()))
+                {
+                    for(int j = 0; j < 5; j++)
+                    {
+                        if(ritual->isAlive(j))
+                        {
+                            m_enemies[i]->assignRitualist(j);
+                            m_enemies[i]->setTarget(ritual->getCenter(j));
+                        }
+                    }
+                } else m_enemies[i]->setTarget(ritual->getCenter(m_enemies[i]->getAssignedRitualist()));
             }
         }
     }

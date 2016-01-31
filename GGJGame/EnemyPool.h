@@ -7,6 +7,7 @@
 #include "Enemy.h"
 #include "GameObject.h"
 class Application;
+class Ritual;
 
 class EnemyPool
 {
@@ -15,7 +16,7 @@ public:
 	~EnemyPool();
 
 	void initialize(Map&);
-	void update(float dt, Application*, Map&, Currency&, Announcements&);
+	void update(float dt, Application*, Map&, Currency&, Announcements&, Ritual*);
 	void draw(sf::RenderWindow&);
     
     int size();

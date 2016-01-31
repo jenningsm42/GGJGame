@@ -34,15 +34,18 @@ bool Projectile::update(float dt)
     if(fabsf(dx) < 10.f && fabsf(dy) < 10.f)
     {
 		if (m_type == ProjectileType::Energy) {
-			m_target->damage();
+			m_target->damage(50);
 			return true; // hit target
 		}
 		if (m_type == ProjectileType::Acid) {
-			m_target->damageOverTime();
+			m_target->damageOverTime(20);
 			return true;
 		}
 		if (m_type == ProjectileType::Dart) {
+            m_target->damage(20);
+            m_target->damageOverTime(20);
 			m_target->slow();
+            return true;
 		}
     }
     

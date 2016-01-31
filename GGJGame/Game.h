@@ -8,6 +8,7 @@
 #include "ProjectilePool.h"
 #include "Currency.h"
 #include "Announcements.h"
+#include "GameOver.h"
 
 class Game : public State
 {
@@ -30,6 +31,8 @@ private:
     ProjectilePool m_projectilePool;
     Currency m_currency;
     Announcements m_announcements;
+    GameOver m_gameOver;
+    bool m_isGameOver;
 };
 
 #endif // GAME_H

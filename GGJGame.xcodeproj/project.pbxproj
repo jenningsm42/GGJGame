@@ -28,6 +28,7 @@
 		F1CC0E521C5DF52900FA43FA /* Totem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E501C5DF52800FA43FA /* Totem.cpp */; };
 		F1CC0E551C5E014100FA43FA /* Announcements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E531C5E014100FA43FA /* Announcements.cpp */; };
 		F1CC0E581C5E1BE500FA43FA /* Tower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E571C5E1BE500FA43FA /* Tower.cpp */; };
+		F1CC0E5B1C5E87CE00FA43FA /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		F1CC0E541C5E014100FA43FA /* Announcements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcements.h; sourceTree = "<group>"; };
 		F1CC0E561C5E1B4C00FA43FA /* Tower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tower.h; sourceTree = "<group>"; };
 		F1CC0E571C5E1BE500FA43FA /* Tower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tower.cpp; sourceTree = "<group>"; };
+		F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOver.cpp; sourceTree = "<group>"; };
+		F1CC0E5A1C5E87CE00FA43FA /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				F1CC0E4D1C5DD98500FA43FA /* Currency.h */,
 				F1CC0E531C5E014100FA43FA /* Announcements.cpp */,
 				F1CC0E541C5E014100FA43FA /* Announcements.h */,
+				F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */,
+				F1CC0E5A1C5E87CE00FA43FA /* GameOver.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				F1CC0E2E1C5D2FCE00FA43FA /* WeaponsUI.cpp in Sources */,
 				F1CC0E271C5CA69C00FA43FA /* WorkerPool.cpp in Sources */,
 				F1CC0E3E1C5D817D00FA43FA /* Shooter.cpp in Sources */,
+				F1CC0E5B1C5E87CE00FA43FA /* GameOver.cpp in Sources */,
 				F1CC0E521C5DF52900FA43FA /* Totem.cpp in Sources */,
 				F1CC0E2A1C5CB94B00FA43FA /* Ritual.cpp in Sources */,
 				F1CC0E371C5D5D9000FA43FA /* Projectile.cpp in Sources */,

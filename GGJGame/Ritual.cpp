@@ -1,13 +1,12 @@
 #include "Ritual.h"
 #include <cmath>
 
-Ritual::Ritual() : m_radius(100.f), m_angle(0.f)
+Ritual::Ritual() : m_radius(100.f), m_angle(0.f), m_ritualistCount(5)
 {
 }
 
 Ritual::~Ritual()
 {
-
 }
 
 void Ritual::initialize(Map &map)
@@ -21,6 +20,7 @@ void Ritual::initialize(Map &map)
         m_personSprite[i].setTexture(m_personTexture);
         m_personSprite[i].setOrigin(m_personTexture.getSize().x / 2, m_personTexture.getSize().y / 2);
 		m_personSprite[i].setPosition(getXLoc(i) + m_offsetX, getYloc(i) + m_offsetY);
+        m_ritualistsAlive[i] = true;
 	}
 
 	m_fireTexture.loadFromFile("data/fire.png");
@@ -42,7 +42,7 @@ void Ritual::release()
 {
 }
 
-void Ritual::update(float dt)
+bool Ritual::update(float dt, EnemyPool& enemyPool)
 {
     m_angle += dt * .5f;
     
@@ -51,6 +51,25 @@ void Ritual::update(float dt)
     
     for(int i = 0; i < 5; i++)
     {
+        if(!m_ritualistsAlive[i]) continue;
+        
+        for(int j = 0; j < enemyPool.size(); j++)
+        {
+            sf::Vector2f epos = enemyPool.getEnemy(j).getCenter();
+            float dx = epos.x - m_personSprite[i].getPosition().x;
+            float dy = epos.y - m_personSprite[i].getPosition().y;
+            float dist = dx*dx + dy*dy;
+            
+            if(dist < 4000.f)
+            {
+                m_ritualistsAlive[i] = false;
+                enemyPool.getEnemy(j).damage(enemyPool.getEnemy(j).getHealth());
+                m_ritualistCount--;
+                if(m_ritualistCount <= 0)
+                    return true; // Game over
+            }
+        }
+        
         m_personSprite[i].setPosition(getXLoc(i) + m_offsetX, getYloc(i) + m_offsetY);
         
         if(int(m_angle * 100.f) % 50 > 25)
@@ -58,6 +77,8 @@ void Ritual::update(float dt)
         else
             m_personSprite[i].setScale(1.f, 1.f);
     }
+    
+    return false;
 }
 
 void Ritual::draw(sf::RenderWindow &window)
@@ -66,17 +87,30 @@ void Ritual::draw(sf::RenderWindow &window)
     window.draw(m_logSprite);
 	window.draw(m_fireSprite);
 	for (int i = 0; i < 5; i++) {
-		window.draw(m_personSprite[i]);
+		if(m_ritualistsAlive[i])
+            window.draw(m_personSprite[i]);
 	}
 }
 
 
 int Ritual::getXLoc(int n) 
 {
-	return cosf(n*1.256637f + m_angle) * m_radius;
+	return cosf((float)n * 3.14159f * 2.f / 5.f + m_angle) * m_radius;
 }
 
 int Ritual::getYloc(int n)
 {
-	return sinf(n*1.256637f + m_angle) * m_radius;
+	return sinf((float)n * 3.14159f * 2.f / 5.f + m_angle) * m_radius;
+}
+
+bool Ritual::isAlive(int index)
+{
+    if(index == -1) return false;
+    return m_ritualistsAlive[index];
+}
+
+sf::Vector2f Ritual::getCenter(int index)
+{
+    return m_personSprite[index].getPosition()
+    + .5f * sf::Vector2f(m_personSprite[index].getLocalBounds().width, m_personSprite[index].getLocalBounds().height);
 }

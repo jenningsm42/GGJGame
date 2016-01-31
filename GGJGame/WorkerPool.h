@@ -19,7 +19,7 @@ public:
     void initialize(Map&, Application*);
     
     void update(float dt, Application* app, Map& map, WeaponPool&, EnemyPool&, Currency&, Announcements&);
-    void draw(sf::RenderWindow&);
+    WeaponsUI* draw(sf::RenderWindow&);
     
 private:
     Worker m_workers[10];

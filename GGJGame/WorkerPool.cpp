@@ -108,7 +108,7 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
     }
 }
 
-void WorkerPool::draw(sf::RenderWindow& window)
+WeaponsUI* WorkerPool::draw(sf::RenderWindow& window)
 {
     for(int i = 0; i < m_workerCount; i++)
     {
@@ -120,8 +120,8 @@ void WorkerPool::draw(sf::RenderWindow& window)
     if(m_selectedWorker != -1)
     {
         window.draw(m_selectedSprite);
-        m_weaponsUI.draw(window);
-    }
+        return &m_weaponsUI;
+    } else return nullptr;
 }
 
 bool WorkerPool::validMove(float x, float y, Map& map)

@@ -25,7 +25,8 @@ void WeaponsUI::initialize(Application* app)
 void WeaponsUI::update(Application* app, WeaponUIStatus &retval)
 {
     for(int i = 0; i < 3; i++)
-        m_weaponSprites[i].setPosition(app->getWidth() / 2 - m_weaponTextures[i].getSize().x - 50 + app->getView()->getCenter().x, 50 + (m_weaponTextures[i].getSize().y + 50) * i + app->getView()->getCenter().y - app->getHeight() / 2);
+        m_weaponSprites[i].setPosition(app->getWidth() / 2 - m_weaponTextures[i].getSize().x - 50 + app->getView()->getCenter().x,
+                                       50 + (m_weaponTextures[i].getSize().y + 30) * i + app->getView()->getCenter().y - app->getHeight() / 2);
     
     sf::Vector2i mpos = sf::Mouse::getPosition() + (sf::Vector2i)app->getView()->getCenter();
     mpos.x -= app->getWidth() / 2;

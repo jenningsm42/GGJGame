@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Map.h"
+#include "EnemyPool.h"
 
 class Ritual : public GameObject 
 {
@@ -8,14 +9,14 @@ public:
 	Ritual();
 	~Ritual();
 
-	// Inherited via GameObject
 	void initialize(Map &);
-
 	virtual void release() override;
 
-	virtual void update(float dt) override;
-
+    bool update(float dt, EnemyPool&);
 	virtual void draw(sf::RenderWindow &) override;
+    
+    bool isAlive(int index);
+    sf::Vector2f getCenter(int index);
 	
 private:
 	sf::Texture m_personTexture;
@@ -26,12 +27,15 @@ private:
     sf::Sprite m_logSprite;
     sf::Texture m_chiefTexture;
     sf::Sprite m_chiefSprite;
-	int getXLoc(int n);
-	int getYloc(int n);
-	const float m_radius;
+    int m_ritualistCount;
+    bool m_ritualistsAlive[5];
+    const float m_radius;
     float m_angle;
     float m_offsetX;
     float m_offsetY;
+    
+    int getXLoc(int n);
+    int getYloc(int n);
 };
 
 
