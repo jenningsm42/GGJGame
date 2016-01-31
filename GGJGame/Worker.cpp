@@ -12,7 +12,7 @@ Worker::~Worker()
 
 void Worker::initialize(Map& map)
 {
-    m_texture.loadFromFile("data/Stickman.png");
+    m_texture.loadFromFile("data/worker_front.png");
     m_sprite.setTexture(m_texture);
     
     std::random_device rd;

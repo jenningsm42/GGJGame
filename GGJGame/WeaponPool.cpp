@@ -1,5 +1,6 @@
 #include "WeaponPool.h"
 #include <SFML/Graphics.hpp>
+#include "Shooter.h"
 
 WeaponPool::WeaponPool()
 {
@@ -25,10 +26,10 @@ void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
 	}
 }
 
-void WeaponPool::update(float dt, Application *, Map & map)
+void WeaponPool::update(float dt, Application*, Map & map, EnemyPool& enemyPool, ProjectilePool& projectilePool)
 {
     for(int i = 0; i < weapons.size(); i++)
-        weapons[i]->update(dt);
+        weapons[i]->update(dt, enemyPool, projectilePool);
 }
 
 void WeaponPool::draw(sf::RenderWindow& window)

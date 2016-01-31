@@ -11,6 +11,7 @@ public:
     ~Projectile();
     
     bool update(float dt);
+    void draw(sf::RenderWindow&);
     
     const sf::FloatRect getBounds() const;
     const sf::Vector2f getCenter() const;

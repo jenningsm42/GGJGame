@@ -21,6 +21,7 @@ void EnemyPool::initialize(Map &)
 void EnemyPool::update(float dt, Application *app, Map &map)
 {
 	sf::Time initialTime = initialClock.getElapsedTime();
+
 	if (initialTime.asSeconds() > 0) {
 		sf::Time timer = zombieClock.getElapsedTime();
 		if (timer.asSeconds() > 5) {
@@ -52,4 +53,12 @@ void EnemyPool::draw(sf::RenderWindow &window)
 	}
 }
 
+int EnemyPool::size()
+{
+    return enemies.size();
+}
 
+Enemy& EnemyPool::getEnemy(int index)
+{
+    return enemies[index];
+}

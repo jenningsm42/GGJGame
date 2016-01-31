@@ -5,6 +5,7 @@
 #include "Ritual.h"
 #include "WorkerPool.h"
 #include "EnemyPool.h"
+#include "ProjectilePool.h"
 
 class Game : public State
 {
@@ -24,6 +25,7 @@ private:
     WorkerPool m_workerPool;
 	EnemyPool m_enemyPool;
 	WeaponPool m_weaponPool;
+    ProjectilePool m_projectilePool;
 };
 
 #endif // GAME_H
