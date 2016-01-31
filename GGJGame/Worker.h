@@ -3,6 +3,9 @@
 #include "GameObject.h"
 #include "Map.h"
 #include "Command.h"
+#include "Shooter.h"
+#include "Weapon.h"
+#include "WeaponPool.h"
 
 class Worker : public GameObject
 {
@@ -13,7 +16,7 @@ public:
     void initialize(Map& map);
     void release() override;
     
-    void update(float dt);
+    void update(float dt, Map &map, WeaponPool &weaponPool);
     void draw(sf::RenderWindow&) override;
     
     const sf::FloatRect getBounds() const;

@@ -21,7 +21,7 @@ void WorkerPool::initialize(Map& map, Application* app)
     m_weaponsUI.initialize(app);
 }
 
-void WorkerPool::update(float dt, Application* app, Map& map)
+void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool)
 {
 	weapon weaponToPlace;
     if(m_selectedWorker != -1)
@@ -88,7 +88,7 @@ void WorkerPool::update(float dt, Application* app, Map& map)
     
     for(int i = 0; i < m_workerCount; i++)
     {
-        m_workers[i].update(dt);
+        m_workers[i].update(dt, map, weaponPool);
         if(m_selectedWorker == i)
             m_selectedSprite.setPosition(m_workers[i].getCenter().x - m_selectedTexture.getSize().x / 2,
                                          m_workers[i].getCenter().y - 70);
