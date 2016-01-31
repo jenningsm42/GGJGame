@@ -2,33 +2,23 @@
 #define ENEMY_H
 #include "GameObject.h"
 #include "Map.h"
-#include <iostream>
-#include "Command.h"
+#include <SFML/Graphics.hpp>
+
 
 class Enemy : public GameObject
 {
 public:
-	Enemy();
-    Enemy(const Enemy&);
-	~Enemy();
+	virtual void initialize(Map& map, sf::Texture &m_texture) {}
+	virtual	void release() {}
 
-	void initialize(Map& map, sf::Texture &m_texture);
-	void release() override;
+	virtual void update(float dt, Map &map) {}
+	virtual void draw(sf::RenderWindow&) {}
 
-	void update(float dt, Map &map);
-	void draw(sf::RenderWindow&) override;
-    
-    void damage();
-    int getHealth();
+	void damage();
+	int getHealth();
 
-	const sf::FloatRect getBounds() const;
-	const sf::Vector2f getCenter() const;
-    
-    Enemy& operator=(const Enemy&);
-    
-private:
-    int m_health;
-    float m_speed;
+protected:
+	int m_health;
+	float m_speed;
 };
-
-#endif // ENEMY_H
+#endif
