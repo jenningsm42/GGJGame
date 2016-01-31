@@ -11,14 +11,21 @@ Game::~Game()
 
 void Game::initialize(Application* app)
 {
-    app->getView()->setCenter(m_map.getWidth() / 2, m_map.getHeight() / 2);
+	app->getView()->setCenter(m_map.getWidth() / 2, m_map.getHeight() / 2);
 	m_ritual.initialize(m_map);
 	m_enemyPool.initialize(m_map);
-    m_workerPool.initialize(m_map, app);
-    m_weaponPool.initialize(m_map, app);
-    m_gameOver.initialize();
-    
-    m_announcements.setAnnouncement("You have 30 seconds to build your defences. Good luck!");
+	m_workerPool.initialize(m_map, app);
+	m_weaponPool.initialize(m_map, app);
+	m_gameOver.initialize();
+
+	m_announcements.setAnnouncement("You have 30 seconds to build your defences. Good luck!");
+
+	//For music:
+	sf::Music ambience;
+	if (ambience.openFromFile("data/music")){
+		ambience.setLoop(true);
+		ambience.play();
+	}
 }
 
 void Game::release()

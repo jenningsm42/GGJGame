@@ -9,6 +9,7 @@
 #include "Currency.h"
 #include "Announcements.h"
 #include "GameOver.h"
+#include <SFML/Audio.hpp>
 
 class Game : public State
 {

@@ -2,6 +2,7 @@
 #define PROJECTILEPOOL_H
 #include <vector>
 #include "Projectile.h"
+#include <SFML/Audio.hpp>
 #include "ProjectileType.h"
 
 class ProjectilePool

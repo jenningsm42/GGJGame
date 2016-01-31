@@ -36,6 +36,22 @@ void Ritual::initialize(Map &map)
     m_chiefSprite.setTexture(m_chiefTexture);
     m_chiefSprite.setPosition(m_offsetX - m_chiefTexture.getSize().x / 2,
                               m_offsetY - m_radius - 150);
+
+	//For sound:
+	sf::SoundBuffer fireSound;
+	fireSound.loadFromFile("fireSound");
+	sf::Sound sound;
+	sound.setBuffer(fireSound);
+	sound.setVolume(75);
+	sound.setLoop(true);
+	sound.play();
+
+	sf::SoundBuffer tribalSound;
+	tribalSound.loadFromFile("fireSound");
+	sf::Sound tribe;
+	tribe.setBuffer(tribalSound);
+	tribe.setPlayingOffset(sf::seconds(5));
+	tribe.play();
 }
 
 void Ritual::release()
@@ -44,7 +60,7 @@ void Ritual::release()
 
 bool Ritual::update(float dt, EnemyPool& enemyPool)
 {
-    m_angle += dt * .5f;
+    m_angle += dt * .4f;
     
     float fireFactor = sinf(m_angle * .8f) / 2.f + .5f;
     m_fireSprite.setColor(sf::Color(60 * fireFactor + 180, 90 * fireFactor + 100, 200 * (1.f - fireFactor) + 10));
