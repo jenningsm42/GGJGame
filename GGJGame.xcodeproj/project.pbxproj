@@ -24,6 +24,7 @@
 		F1CC0E421C5D9A0800FA43FA /* WeaponPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */; };
 		F1CC0E481C5DCCD700FA43FA /* Zombie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E461C5DCCD700FA43FA /* Zombie.cpp */; };
 		F1CC0E4B1C5DCCE200FA43FA /* Ghost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E491C5DCCE200FA43FA /* Ghost.cpp */; };
+		F1CC0E4E1C5DD98500FA43FA /* Currency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E4C1C5DD98500FA43FA /* Currency.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		F1CC0E471C5DCCD700FA43FA /* Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombie.h; sourceTree = "<group>"; };
 		F1CC0E491C5DCCE200FA43FA /* Ghost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ghost.cpp; sourceTree = "<group>"; };
 		F1CC0E4A1C5DCCE200FA43FA /* Ghost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ghost.h; sourceTree = "<group>"; };
+		F1CC0E4C1C5DD98500FA43FA /* Currency.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Currency.cpp; sourceTree = "<group>"; };
+		F1CC0E4D1C5DD98500FA43FA /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				F1CC0E361C5D5D9000FA43FA /* Projectile.h */,
 				F1CC0E381C5D5DA200FA43FA /* ProjectilePool.cpp */,
 				F1CC0E391C5D5DA200FA43FA /* ProjectilePool.h */,
+				F1CC0E4C1C5DD98500FA43FA /* Currency.cpp */,
+				F1CC0E4D1C5DD98500FA43FA /* Currency.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
 				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
 				F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */,
+				F1CC0E4E1C5DD98500FA43FA /* Currency.cpp in Sources */,
 				F1CC0E421C5D9A0800FA43FA /* WeaponPool.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

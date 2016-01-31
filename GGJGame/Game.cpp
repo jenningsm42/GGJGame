@@ -49,9 +49,10 @@ void Game::update(float dt, Application* app)
     
     m_ritual.update(dt);
 	m_enemyPool.update(dt, app, m_map);
-    m_workerPool.update(dt, app, m_map, m_weaponPool, m_enemyPool);
+    m_workerPool.update(dt, app, m_map, m_weaponPool, m_enemyPool, m_currency);
     m_weaponPool.update(dt, app, m_map, m_enemyPool, m_projectilePool);
     m_projectilePool.update(dt);
+    m_currency.update(app);
 }
 
 void Game::draw(sf::RenderWindow& window)
@@ -62,4 +63,5 @@ void Game::draw(sf::RenderWindow& window)
 	m_enemyPool.draw(window);
     m_ritual.draw(window);
     m_projectilePool.draw(window);
+    m_currency.draw(window);
 }

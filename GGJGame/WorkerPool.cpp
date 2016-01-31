@@ -21,14 +21,20 @@ void WorkerPool::initialize(Map& map, Application* app)
     m_weaponsUI.initialize(app);
 }
 
-void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool, EnemyPool& enemyPool)
+void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool, EnemyPool& enemyPool, Currency& currency)
 {
 	WeaponUIStatus weaponToPlace;
     if(m_selectedWorker != -1)
     {
 		m_weaponsUI.update(app, weaponToPlace);
         if(m_placingWeaponType == WeaponType::None)
-            m_placingWeaponType = weaponToPlace.weaponType;
+        {
+            if(currency.getPrice(weaponToPlace.weaponType) <= currency.getCurrency())
+            {
+                currency.deductCurrency(currency.getPrice(weaponToPlace.weaponType));
+                m_placingWeaponType = weaponToPlace.weaponType;
+            }
+        }
     }
     
     // Selecting a worker
@@ -93,6 +99,7 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
         if(m_workers[i].getHealth() <= 0) continue;
         
         m_workers[i].update(dt, map, weaponPool, enemyPool);
+        if(m_workers[i].getHealth() <= 0) m_selectedWorker = -1;
         
         if(m_selectedWorker == i)
             m_selectedSprite.setPosition(m_workers[i].getCenter().x - m_selectedTexture.getSize().x / 2,

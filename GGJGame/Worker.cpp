@@ -82,7 +82,7 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
         float dy = epos.y - getCenter().y;
         float dist = dx*dx + dy*dy;
         
-        if(dist < 400.f)
+        if(dist < 4000.f)
             damage();
     }
 }

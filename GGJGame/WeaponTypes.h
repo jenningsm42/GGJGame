@@ -5,6 +5,7 @@ enum struct WeaponType {
 	None,
     Shooter,
 	Acid,
+    Blowdart,
 	Trap,
 	Wall
 };
