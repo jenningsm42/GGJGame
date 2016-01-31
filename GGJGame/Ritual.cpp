@@ -47,7 +47,7 @@ void Ritual::initialize(Map &map)
 	sound.play();
 
 	sf::SoundBuffer tribalSound;
-	tribalSound.loadFromFile("data/Tribal_Chants_bip.wav");
+	tribalSound.loadFromFile("data/Tribal_Chantss_bip.wav");
 	sf::Sound tribe;
 	tribe.setBuffer(tribalSound);
 	tribe.setPlayingOffset(sf::seconds(5));

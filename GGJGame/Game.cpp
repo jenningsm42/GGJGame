@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <iostream>
 #include "Application.h"
 
 Game::Game() : m_isGameOver(false)
@@ -26,6 +27,7 @@ void Game::initialize(Application* app)
 		ambience.setLoop(true);
 		ambience.setVolume(50);
 		ambience.play();
+		std::cout << "shit got played";
 	}
 }
 
