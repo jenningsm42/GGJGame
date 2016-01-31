@@ -18,10 +18,12 @@ public:
 	virtual void draw(sf::RenderWindow &) override;
 	
 private:
-	sf::Texture m_personTexture[5];
+	sf::Texture m_personTexture;
 	sf::Sprite m_personSprite[5];
 	sf::Texture m_fireTexture;
 	sf::Sprite m_fireSprite;
+    sf::Texture m_logTexture;
+    sf::Sprite m_logSprite;
     sf::Texture m_chiefTexture;
     sf::Sprite m_chiefSprite;
 	int getXLoc(int n);
