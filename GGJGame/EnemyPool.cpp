@@ -30,6 +30,11 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
         m_waveCount++;
         
         announcements.setAnnouncement("Wave  " + std::to_string(m_waveCount) + "  starting..");
+		sf::SoundBuffer warHorn;
+		warHorn.loadFromFile("data/enemy_war_horn_bip.wav");
+		sf::Sound sound;
+		sound.setBuffer(warHorn);
+		sound.play();
     }
     
     if(m_inWave)
