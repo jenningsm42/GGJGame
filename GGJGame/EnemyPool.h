@@ -20,12 +20,13 @@ public:
     Enemy& getEnemy(int index);
     
 private:
-	sf::Clock clock;
+	sf::Clock zombieClock;
+	sf::Clock ghostClock;
 	sf::Clock initialClock;
 	int Enemycount = 0;
-	std::vector<Enemy> enemies;
-	sf::Texture m_texture;
-	sf::Sprite m_sprite;
+	std::vector<Enemy*> enemies;
+	sf::Texture m_enemyTextures[2];
+
 };
 
 #endif
