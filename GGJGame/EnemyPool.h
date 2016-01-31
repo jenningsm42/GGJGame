@@ -13,8 +13,11 @@
 #include "Ritual.h"
 #include <string>
 #include <cmath>
+#include "Bar.h"
+
 class Application;
 class Ritual;
+class Bar;
 
 class EnemyPool
 {
@@ -40,6 +43,8 @@ private:
     float m_spawnRate;
 	std::vector<Enemy*> m_enemies;
 	sf::Texture m_enemyTextures[3];
+    std::vector<Bar*> m_bars;
+	sf::Texture m_enemyTextures[2];
 };
 
 #endif

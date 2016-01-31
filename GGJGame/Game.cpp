@@ -21,14 +21,15 @@ void Game::initialize(Application* app)
 
 	m_announcements.setAnnouncement("You have 30 seconds to build your defences. Good luck!");
 
-	//For music:
-	sf::Music ambience;
-	if (ambience.openFromFile("data/deep_forest_bip.wav")){
-		ambience.setLoop(true);
-		ambience.setVolume(50);
-		ambience.play();
-		std::cout << "shit got played";
+	if (m_ambience.openFromFile("data/deep_forest_bip.wav")){
+		m_ambience.setLoop(true);
+		m_ambience.setVolume(50);
+		m_ambience.play();
 	}
+    if(m_bg.openFromFile("data/Spirit_Defense_Music_fade.wav")) {
+        m_bg.setVolume(80);
+        m_bg.play();
+    }
 }
 
 void Game::release()
