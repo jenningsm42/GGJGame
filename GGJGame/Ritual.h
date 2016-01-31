@@ -1,9 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Map.h"
-#include <vector>
-#include <cstdlib>
-#include <math.h>
+
 class Ritual : public GameObject 
 {
 public:

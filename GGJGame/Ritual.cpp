@@ -1,4 +1,5 @@
 #include "Ritual.h"
+#include <cmath>
 
 Ritual::Ritual() : m_radius(100.f), m_angle(0.f)
 {
@@ -63,10 +64,10 @@ void Ritual::draw(sf::RenderWindow &window)
 
 int Ritual::getXLoc(int n) 
 {
-	return cosf(n*1.2566370614359172953850573533118 + m_angle) * m_radius;
+	return cosf(n*1.256637f + m_angle) * m_radius;
 }
 
 int Ritual::getYloc(int n)
 {
-	return sinf(n*1.2566370614359172953850573533118 + m_angle) * m_radius;
+	return sinf(n*1.256637f + m_angle) * m_radius;
 }

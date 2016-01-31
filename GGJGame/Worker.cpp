@@ -42,7 +42,7 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool)
             
             if(fabsf(dx) < 5.f && fabsf(dy) < 5.f)
             {
-				weaponPool.placeWeapon(m_curCommand.weapontype, m_curCommand.x, m_curCommand.y, map);
+				weaponPool.placeWeapon(m_curCommand.weaponType, m_curCommand.x, m_curCommand.y, map);
                 m_curCommand.commandType = CommandType::None;
                 break;
             }
@@ -57,7 +57,7 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool)
 
 			if (fabsf(dx) < 5.f && fabsf(dy) < 5.f)
 			{
-				weaponPool.placeWeapon(m_curCommand.weapontype, m_curCommand.x, m_curCommand.y, map);
+				weaponPool.placeWeapon(m_curCommand.weaponType, m_curCommand.x, m_curCommand.y, map);
 				m_curCommand.commandType = CommandType::None;
 				break;
 			}

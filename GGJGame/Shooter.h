@@ -12,7 +12,7 @@ public:
 	Shooter();
 	~Shooter();
 
-	void initialize(Map &, float x, float y);
+    void initialize(Map &, float x, float y, sf::Texture&) override;
 	virtual void release() override;
 	virtual void update(float dt) override;
 	virtual void draw(sf::RenderWindow &) override;

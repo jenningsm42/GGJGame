@@ -21,6 +21,7 @@
 		F1CC0E371C5D5D9000FA43FA /* Projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E351C5D5D9000FA43FA /* Projectile.cpp */; };
 		F1CC0E3A1C5D5DA200FA43FA /* ProjectilePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E381C5D5DA200FA43FA /* ProjectilePool.cpp */; };
 		F1CC0E3E1C5D817D00FA43FA /* Shooter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E3B1C5D817D00FA43FA /* Shooter.cpp */; };
+		F1CC0E421C5D9A0800FA43FA /* WeaponPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +56,10 @@
 		F1CC0E3B1C5D817D00FA43FA /* Shooter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shooter.cpp; sourceTree = "<group>"; };
 		F1CC0E3C1C5D817D00FA43FA /* Shooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shooter.h; sourceTree = "<group>"; };
 		F1CC0E3D1C5D817D00FA43FA /* WeaponPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponPool.h; sourceTree = "<group>"; };
-		F1CC0E3F1C5D889B00FA43FA /* Weapontypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weapontypes.h; sourceTree = "<group>"; };
+		F1CC0E3F1C5D889B00FA43FA /* WeaponTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeaponTypes.h; sourceTree = "<group>"; };
 		F1CC0E401C5D88B100FA43FA /* Weapon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
+		F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponPool.cpp; sourceTree = "<group>"; };
+		F1CC0E441C5D9A6500FA43FA /* WeaponPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeaponPool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +92,9 @@
 		F14E70EB1C5B4A13009A4D6C /* GGJGame */ = {
 			isa = PBXGroup;
 			children = (
-				F1CC0E3F1C5D889B00FA43FA /* Weapontypes.h */,
+				F1CC0E441C5D9A6500FA43FA /* WeaponPool.h */,
+				F1CC0E411C5D9A0800FA43FA /* WeaponPool.cpp */,
+				F1CC0E3F1C5D889B00FA43FA /* WeaponTypes.h */,
 				F1CC0E3B1C5D817D00FA43FA /* Shooter.cpp */,
 				F1CC0E3C1C5D817D00FA43FA /* Shooter.h */,
 				F1CC0E401C5D88B100FA43FA /* Weapon.h */,
@@ -229,6 +234,7 @@
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
 				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
 				F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */,
+				F1CC0E421C5D9A0800FA43FA /* WeaponPool.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

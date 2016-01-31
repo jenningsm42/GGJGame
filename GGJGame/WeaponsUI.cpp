@@ -22,7 +22,7 @@ void WeaponsUI::initialize(Application* app)
     }
 }
 
-void WeaponsUI::update(Application* app, weapon &retval)
+void WeaponsUI::update(Application* app, WeaponUIStatus &retval)
 {
     for(int i = 0; i < 3; i++)
         m_weaponSprites[i].setPosition(app->getWidth() / 2 - m_weaponTextures[i].getSize().x - 50 + app->getView()->getCenter().x, 50 + (m_weaponTextures[i].getSize().y + 50) * i + app->getView()->getCenter().y - app->getHeight() / 2);
@@ -48,11 +48,11 @@ void WeaponsUI::update(Application* app, weapon &retval)
 			retval.isHover = true;
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 				switch (i) {
-                    case 0: retval.weapontype = weapontype::shooter; break;
-                    case 1: retval.weapontype = weapontype::trap; break;
-                    case 2: retval.weapontype = weapontype::acid; break;
-                    case 3: retval.weapontype = weapontype::wall; break;
-                    default: retval.weapontype = weapontype::none; break;
+                    case 0: retval.weaponType = WeaponType::Shooter; break;
+                    case 1: retval.weaponType = WeaponType::Trap; break;
+                    case 2: retval.weaponType = WeaponType::Acid; break;
+                    case 3: retval.weaponType = WeaponType::Wall; break;
+                    default: retval.weaponType = WeaponType::None; break;
 				}
 				 
 			}

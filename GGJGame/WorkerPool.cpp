@@ -23,12 +23,12 @@ void WorkerPool::initialize(Map& map, Application* app)
 
 void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weaponPool)
 {
-	weapon weaponToPlace;
+	WeaponUIStatus weaponToPlace;
     if(m_selectedWorker != -1)
     {
 		m_weaponsUI.update(app, weaponToPlace);
         if(!placeWeapon)
-            placeWeapon = (weaponToPlace.weapontype != weapontype::none);
+            placeWeapon = (weaponToPlace.weaponType != WeaponType::None);
     }
     
     // Selecting a worker
@@ -75,7 +75,7 @@ void WorkerPool::update(float dt, Application* app, Map& map, WeaponPool &weapon
         {
             Command c;
             c.commandType = CommandType::Place;
-            c.weapontype = weaponToPlace.weapontype;
+            c.weaponType = weaponToPlace.weaponType;
             sf::Vector2f cellPos = map.convertToCellCoordinates(mpos.x, mpos.y);
             c.x = cellPos.x;
             c.y = cellPos.y;

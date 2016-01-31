@@ -50,8 +50,8 @@ void Game::update(float dt, Application* app)
     
     m_ritual.update(dt);
 	m_enemyPool.update(dt, app, m_map);
-    m_workerPool.update(dt, app, m_map);
-	m_weaponPool.update(dt, app, m_map)
+    m_workerPool.update(dt, app, m_map, m_weaponPool);
+    m_weaponPool.update(dt, app, m_map);
 
 }
 
