@@ -49,6 +49,7 @@ void Zombie::update(float dt, Map &map)
 	if (DotDuration > 0) {
 		damage();
 		DotDuration--;
+        //todo
 	}
 
 	if (slowDuration > 0) {

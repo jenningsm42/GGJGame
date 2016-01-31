@@ -19,9 +19,8 @@ void Shooter::release()
 }
 
 void Shooter::update(float dt, EnemyPool& enemyPool, ProjectilePool& projectilePool)
-{	
-    static sf::Clock timer;
-    if(timer.getElapsedTime().asSeconds() >= m_delay)
+{
+    if(m_timer.getElapsedTime().asSeconds() >= m_delay)
     {
         sf::Vector2f spos = m_sprite.getPosition();
         spos.x += m_sprite.getLocalBounds().width / 2;
@@ -35,7 +34,7 @@ void Shooter::update(float dt, EnemyPool& enemyPool, ProjectilePool& projectileP
             if(lenSq < m_rangeSq)
             {
                 projectilePool.spawnProjectile(spos.x, spos.y, &enemyPool.getEnemy(i), ProjectileType::Energy);
-                timer.restart();
+                m_timer.restart();
                 break;
             }
         }

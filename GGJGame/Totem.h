@@ -14,6 +14,7 @@ public:
 	virtual void draw(sf::RenderWindow &) override;
 
 private:
+    sf::Clock m_timer;
 	float m_rangeSq = 450.f*450.f;
 	float m_delay = 3.5f; // In seconds
 };

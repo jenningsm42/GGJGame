@@ -16,7 +16,7 @@ public:
     
 private:
     sf::Texture m_projectileTexture[3];
-    std::vector<Projectile> m_projectiles;
+    std::vector<Projectile*> m_projectiles;
 };
 
 #endif // PROJECTILEPOOL_H

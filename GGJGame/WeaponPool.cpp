@@ -26,11 +26,11 @@ void WeaponPool::placeWeapon(WeaponType type, float x, float y, Map &map)
 		case WeaponType::Acid: {
 			weapons.push_back(new Totem());
 			weapons.back()->initialize(map, x, y, m_texture[1]);
-		}
+        } break;
 		case WeaponType::Blowdart: {
 			weapons.push_back(new Tower());
 			weapons.back()->initialize(map, x, y, m_texture[2]);
-		}
+        } break;
         default: break;
 	}
 }
