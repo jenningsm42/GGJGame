@@ -29,6 +29,7 @@
 		F1CC0E551C5E014100FA43FA /* Announcements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E531C5E014100FA43FA /* Announcements.cpp */; };
 		F1CC0E581C5E1BE500FA43FA /* Tower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E571C5E1BE500FA43FA /* Tower.cpp */; };
 		F1CC0E5B1C5E87CE00FA43FA /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */; };
+		F1CC0E5E1C5EAF3300FA43FA /* Bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E5C1C5EAF3300FA43FA /* Bar.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		F1CC0E571C5E1BE500FA43FA /* Tower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tower.cpp; sourceTree = "<group>"; };
 		F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOver.cpp; sourceTree = "<group>"; };
 		F1CC0E5A1C5E87CE00FA43FA /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		F1CC0E5C1C5EAF3300FA43FA /* Bar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bar.cpp; sourceTree = "<group>"; };
+		F1CC0E5D1C5EAF3300FA43FA /* Bar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 				F1CC0E541C5E014100FA43FA /* Announcements.h */,
 				F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */,
 				F1CC0E5A1C5E87CE00FA43FA /* GameOver.h */,
+				F1CC0E5C1C5EAF3300FA43FA /* Bar.cpp */,
+				F1CC0E5D1C5EAF3300FA43FA /* Bar.h */,
 			);
 			path = GGJGame;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				F1CC0E371C5D5D9000FA43FA /* Projectile.cpp in Sources */,
 				F14E71091C5B625E009A4D6C /* Application.cpp in Sources */,
 				F14E710A1C5B625E009A4D6C /* Game.cpp in Sources */,
+				F1CC0E5E1C5EAF3300FA43FA /* Bar.cpp in Sources */,
 				F1CC0E241C5C9E7100FA43FA /* Worker.cpp in Sources */,
 				F1CC0E4E1C5DD98500FA43FA /* Currency.cpp in Sources */,
 				F1CC0E421C5D9A0800FA43FA /* WeaponPool.cpp in Sources */,

@@ -5,6 +5,7 @@
 #include "Command.h"
 #include "WeaponPool.h"
 #include "EnemyPool.h"
+#include "Bar.h"
 
 class Worker : public GameObject
 {
@@ -30,8 +31,11 @@ private:
     Command m_curCommand;
     const float m_speed;
     int m_health;
+    sf::Clock m_buildTimer;
+    bool m_building;
     sf::Texture m_moveTileTexture;
     sf::Sprite m_moveTileSprite;
+    Bar m_buildBar;
 };
 
 #endif // WORKER_H

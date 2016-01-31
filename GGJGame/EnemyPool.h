@@ -8,6 +8,7 @@
 #include "GameObject.h"
 class Application;
 class Ritual;
+class Bar;
 
 class EnemyPool
 {
@@ -31,6 +32,7 @@ private:
     bool m_inWave = false;
     float m_spawnRate;
 	std::vector<Enemy*> m_enemies;
+    std::vector<Bar*> m_bars;
 	sf::Texture m_enemyTextures[2];
 };
 

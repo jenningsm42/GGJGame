@@ -1,9 +1,10 @@
 #include "Worker.h"
 #include <random>
 
-Worker::Worker() : m_speed(200.f), m_health(1)
+Worker::Worker() : m_speed(200.f), m_health(1), m_building(false), m_buildBar(100)
 {
     m_curCommand.commandType = CommandType::None;
+    m_buildBar.setFillColor(sf::Color::Yellow);
 }
 
 Worker::~Worker()
@@ -67,10 +68,23 @@ void Worker::update(float dt, Map &map, WeaponPool &weaponPool, EnemyPool& enemy
 			if (fabsf(dx) < 5.f && fabsf(dy) < 5.f)
             {
                 m_sprite.setPosition(m_curCommand.x - m_sprite.getLocalBounds().width / 2,
-                                     m_curCommand.y - m_sprite.getLocalBounds().height + 20);
-				
-				weaponPool.placeWeapon(m_curCommand.weaponType, m_curCommand.x, m_curCommand.y, map);
-				m_curCommand.commandType = CommandType::None;
+                                  m_curCommand.y - m_sprite.getLocalBounds().height + 20);
+                
+                if(!m_building)
+                {
+                    m_buildTimer.restart();
+                    m_buildBar.update(getCenter());
+                    m_building = true;
+                }
+                else if(m_buildTimer.getElapsedTime().asSeconds() >= 2.f)
+                {
+                    weaponPool.placeWeapon(m_curCommand.weaponType, m_curCommand.x, m_curCommand.y, map);
+                    m_building = false;
+                    m_curCommand.commandType = CommandType::Move;
+                    m_curCommand.x += 64;
+                } else {
+                    m_buildBar.setCurrentValue(m_buildTimer.getElapsedTime().asSeconds() / 2.f * 100);
+                }
 				break;
 			}
 
@@ -100,6 +114,9 @@ void Worker::draw(sf::RenderWindow& window)
         window.draw(m_moveTileSprite);
     
     window.draw(m_sprite);
+    
+    if(m_building)
+        m_buildBar.draw(window);
 }
 
 void Worker::damage()

@@ -3,6 +3,7 @@
 #include "Ghost.h"
 #include "Zombie.h"
 #include "Ritual.h"
+#include "Bar.h"
 #include <string>
 #include <cmath>
 
@@ -45,24 +46,39 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
                 m_enemies.push_back(new Zombie());
                 m_enemies.back()->initialize(map, m_enemyTextures[0]);
                 m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
+                
+                m_bars.push_back(new Bar(m_enemies.back()->getHealth()));
+                m_bars.back()->setCurrentValue(m_enemies.back()->getHealth());
+                
                 m_zombieClock.restart();
             }
             if (m_waveCount >= 2 && m_ghostClock.getElapsedTime().asSeconds() > 15.f * m_spawnRate) {
                 m_enemies.push_back(new Ghost());
                 m_enemies.back()->initialize(map, m_enemyTextures[1]);
                 m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
+                
+                m_bars.push_back(new Bar(m_enemies.back()->getHealth()));
+                m_bars.back()->setCurrentValue(m_enemies.back()->getHealth());
+                
                 m_ghostClock.restart();
             }
         }
         
         for (int i = 0; i < m_enemies.size(); i++) {
             m_enemies[i]->update(dt, map);
+            m_bars[i]->setCurrentValue(m_enemies[i]->getHealth());
+            m_bars[i]->update(m_enemies[i]->getCenter());
             
             if(m_enemies[i]->getHealth() <= 0)
             {
                 currency.addCurrency(25);
+                
                 m_enemies[i]->release();
+                delete m_enemies[i];
                 m_enemies.erase(m_enemies.begin() + i);
+                
+                delete m_bars[i];
+                m_bars.erase(m_bars.begin() + i);
             }
             
             float dx = map.getWidth() / 2 - m_enemies[i]->getCenter().x;
@@ -92,6 +108,10 @@ void EnemyPool::draw(sf::RenderWindow &window)
 	for (int i = 0; i < m_enemies.size(); i++) {
 		m_enemies[i]->draw(window);
 	}
+    for(int i = 0; i < m_bars.size(); i++)
+    {
+        m_bars[i]->draw(window);
+    }
 }
 
 int EnemyPool::size()
