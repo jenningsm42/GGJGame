@@ -50,16 +50,17 @@ void Game::update(float dt, Application* app)
     
     m_ritual.update(dt);
 	m_enemyPool.update(dt, app, m_map);
-    m_workerPool.update(dt, app, m_map);
-	m_weaponPool.update(dt, app, m_map)
+    m_workerPool.update(dt, app, m_map, m_weaponPool);
+    m_weaponPool.update(dt, app, m_map);
 
 }
 
 void Game::draw(sf::RenderWindow& window)
 {
 	m_map.draw(window);
-	m_ritual.draw(window);
     m_workerPool.draw(window);
 	m_enemyPool.draw(window);
+    m_weaponPool.draw(window);
+    m_ritual.draw(window);
 
 }

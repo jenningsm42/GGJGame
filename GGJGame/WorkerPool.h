@@ -4,7 +4,7 @@
 #include "Worker.h"
 #include "Map.h"
 #include "WeaponsUI.h"
-#include "Weapontypes.h"
+#include "WeaponTypes.h"
 class Application;
 
 class WorkerPool
@@ -15,7 +15,7 @@ public:
     
     void initialize(Map&, Application*);
     
-    void update(float dt, Application*, Map& map, WeaponPool weaponPool);
+    void update(float dt, Application* app, Map& map, WeaponPool &weaponPool);
     void draw(sf::RenderWindow&);
     
 private:
@@ -25,7 +25,9 @@ private:
     int m_selectedWorker;
     sf::Texture m_selectedTexture;
     sf::Sprite m_selectedSprite;
-	bool placeWeapon = false;
+    WeaponType m_placingWeaponType;
+    
+    bool validMove(float x, float y, Map&);
 };
 
 #endif // WORKERPOOL_H

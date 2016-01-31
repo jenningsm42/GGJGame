@@ -3,8 +3,6 @@
 #include "GameObject.h"
 #include "Map.h"
 #include "Command.h"
-#include "Shooter.h"
-#include "Weapon.h"
 #include "WeaponPool.h"
 
 class Worker : public GameObject

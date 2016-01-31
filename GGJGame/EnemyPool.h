@@ -1,6 +1,5 @@
 #ifndef ENEMYPOOL_H
 #define ENEMYPOOL_H
-
 #include <SFML/Graphics.hpp>
 #include "Map.h"
 #include "Enemy.h"

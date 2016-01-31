@@ -2,17 +2,15 @@
 
 Shooter::Shooter()
 {
-	m_texture.loadFromFile("data/shooter.png");
-	m_sprite.setTexture(m_texture);
 }
 
 Shooter::~Shooter()
 {
 }
 
-void Shooter::initialize(Map &, float x, float y)
+void Shooter::initialize(Map &, float x, float y, sf::Texture& texture)
 {
-	
+    m_sprite.setTexture(texture);
 	m_sprite.setPosition(x, y);
 }
 
