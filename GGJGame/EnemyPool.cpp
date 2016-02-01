@@ -24,7 +24,7 @@ void EnemyPool::initialize(Map &)
 
 void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency, Announcements& announcements, Ritual* ritual)
 {
-	if (m_waveClock.getElapsedTime().asSeconds() > 30.f && !m_inWave) {
+    if (m_waveClock.getElapsedTime().asSeconds() > (m_waveCount == 0? 20.f : 10.f) && !m_inWave) {
         m_inWave = true;
         m_waveClock.restart();
         m_spawnRate = expf(-.55 * (float)m_waveCount);
@@ -47,7 +47,7 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
             announcements.setAnnouncement("Wave  " + std::to_string(m_waveCount) + "  finished!");
         }
         
-        if(m_waveClock.getElapsedTime().asSeconds() <= 60.f)
+        if(m_waveClock.getElapsedTime().asSeconds() <= 60.f && m_inWave)
         {
             if (m_zombieClock.getElapsedTime().asSeconds() > 5.f * m_spawnRate) {
                 m_enemies.push_back(new Zombie());
@@ -71,17 +71,17 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
             }
 			if (m_waveCount >= 3 && m_bossClock.getElapsedTime().asSeconds() > 22.f * m_spawnRate) {
 				m_enemies.push_back(new BossGhost());
-				m_enemies.back()->initialize(map, m_enemyTextures[1]);
-				m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
+				m_enemies.back()->initialize(map, m_enemyTextures[2]);
+                m_enemies.back()->setTarget(sf::Vector2f(map.getWidth() / 2, map.getHeight() / 2));
+                
+                m_bars.push_back(new Bar(m_enemies.back()->getHealth()));
+                m_bars.back()->setCurrentValue(m_enemies.back()->getHealth());
+                
 				m_bossClock.restart();
 			}
         }
         
         for (int i = 0; i < m_enemies.size(); i++) {
-            m_enemies[i]->update(dt, map);
-            m_bars[i]->setCurrentValue(m_enemies[i]->getHealth());
-            m_bars[i]->update(m_enemies[i]->getCenter());
-            
             if(m_enemies[i]->getHealth() <= 0)
             {
                 currency.addCurrency(25);
@@ -98,7 +98,14 @@ void EnemyPool::update(float dt, Application *app, Map &map, Currency& currency,
                 
                 delete m_bars[i];
                 m_bars.erase(m_bars.begin() + i);
+                
+                i--;
+                continue;
             }
+            
+            m_enemies[i]->update(dt, map);
+            m_bars[i]->setCurrentValue(m_enemies[i]->getHealth());
+            m_bars[i]->update(m_enemies[i]->getCenter());
             
             float dx = map.getWidth() / 2 - m_enemies[i]->getCenter().x;
             float dy = map.getHeight() / 2 - m_enemies[i]->getCenter().y;

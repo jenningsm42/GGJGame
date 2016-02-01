@@ -20,6 +20,7 @@ Bar::~Bar()
 void Bar::setCurrentValue(int val)
 {
     m_current = val;
+    
     m_barFill->setSize(sf::Vector2f(68 * (float)val / (float)m_maximum, 8));
 }
 
@@ -38,4 +39,12 @@ void Bar::draw(sf::RenderWindow& window)
 {
     window.draw(*m_barBackground);
     window.draw(*m_barFill);
+}
+
+Bar& Bar::operator=(const Bar& other)
+{
+    m_barBackground = other.m_barBackground;
+    m_barFill = other.m_barFill;
+    m_maximum = other.m_maximum;
+    m_current = other.m_current;
 }

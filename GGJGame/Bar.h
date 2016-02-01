@@ -15,6 +15,8 @@ public:
     void update(sf::Vector2f target);
     void draw(sf::RenderWindow&);
     
+    Bar& operator=(const Bar&);
+    
 private:
     sf::RectangleShape* m_barBackground;
     sf::RectangleShape* m_barFill;

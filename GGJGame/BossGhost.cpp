@@ -5,7 +5,7 @@ BossGhost::BossGhost()
 {
 	m_speed = 65;
 	m_health = 400;
-
+    m_type = 1;
 }
 
 BossGhost::BossGhost(const BossGhost& other)
@@ -13,6 +13,7 @@ BossGhost::BossGhost(const BossGhost& other)
 	m_sprite = other.m_sprite;
 	m_speed = other.m_speed;
 	m_health = other.m_health;
+    m_type = 1;
 }
 
 BossGhost::~BossGhost()
@@ -34,12 +35,6 @@ void BossGhost::initialize(Map &map, sf::Texture &m_texture)
 
 void BossGhost::release()
 {
-	sf::SoundBuffer deathSound;
-	deathSound.loadFromFile("data/Tribal_2_bip.wav");
-	sf::Sound sound;
-	sound.setBuffer(deathSound);
-	sound.setVolume(60);
-	sound.play();
 }
 
 void BossGhost::update(float dt, Map &map)

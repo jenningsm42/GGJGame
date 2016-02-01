@@ -1,9 +1,6 @@
 #ifndef BossGhost_H
 #define BossGhost_H
-#include "GameObject.h"
 #include "Map.h"
-#include <iostream>
-#include "Command.h"
 #include "Enemy.h"
 
 class BossGhost : public Enemy

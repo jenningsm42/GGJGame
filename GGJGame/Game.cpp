@@ -19,7 +19,7 @@ void Game::initialize(Application* app)
 	m_weaponPool.initialize(m_map, app);
 	m_gameOver.initialize();
 
-	m_announcements.setAnnouncement("You have 30 seconds to build your defences. Good luck!");
+	m_announcements.setAnnouncement("You have 20 seconds to build your defences. Good luck!");
 
 	if (m_ambience.openFromFile("data/deep_forest_bip.wav")){
 		m_ambience.setLoop(true);

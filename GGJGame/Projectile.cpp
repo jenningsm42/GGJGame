@@ -23,7 +23,7 @@ Projectile::~Projectile()
 
 bool Projectile::update(float dt)
 {
-    if(m_target == nullptr)
+    if(m_target == nullptr || m_target->getHealth() <= 0)
         return true;
     
     sf::Vector2f tpos = m_target->getCenter();
