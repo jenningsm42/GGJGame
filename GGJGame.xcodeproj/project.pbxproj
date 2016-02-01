@@ -31,6 +31,7 @@
 		F1CC0E5B1C5E87CE00FA43FA /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E591C5E87CE00FA43FA /* GameOver.cpp */; };
 		F1CC0E5E1C5EAF3300FA43FA /* Bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E5C1C5EAF3300FA43FA /* Bar.cpp */; };
 		F1CC0E611C5EC66900FA43FA /* BossGhost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CC0E5F1C5EC66800FA43FA /* BossGhost.cpp */; };
+		F1CC0E631C5EE64F00FA43FA /* data in Resources */ = {isa = PBXBuildFile; fileRef = F1CC0E621C5EE64F00FA43FA /* data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		F1CC0E5D1C5EAF3300FA43FA /* Bar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bar.h; sourceTree = "<group>"; };
 		F1CC0E5F1C5EC66800FA43FA /* BossGhost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BossGhost.cpp; sourceTree = "<group>"; };
 		F1CC0E601C5EC66900FA43FA /* BossGhost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossGhost.h; sourceTree = "<group>"; };
+		F1CC0E621C5EE64F00FA43FA /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = "../../../Library/Developer/Xcode/DerivedData/GGJGame-dstqlntpwqehqldgyaazzqtmdkex/Build/Products/Release/data"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		F14E70EB1C5B4A13009A4D6C /* GGJGame */ = {
 			isa = PBXGroup;
 			children = (
+				F1CC0E621C5EE64F00FA43FA /* data */,
 				F1CC0E5F1C5EC66800FA43FA /* BossGhost.cpp */,
 				F1CC0E601C5EC66900FA43FA /* BossGhost.h */,
 				F1CC0E571C5E1BE500FA43FA /* Tower.cpp */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CC0E631C5EE64F00FA43FA /* data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
