@@ -39,13 +39,20 @@ void Ghost::release()
 
 void Ghost::update(float dt, Map &map)
 {
-	float my_x = m_sprite.getPosition().x;
-	float my_y = m_sprite.getPosition().y;
-
-	float dx = map.getWidth() / 2 - getCenter().x;
-	float dy = map.getHeight() / 2 - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
-	float angle = atan2f(dy, dx);
-	m_sprite.move(cosf(angle)*dt*m_speed, sinf(angle)*dt*m_speed);
+    float dx = m_target.x - getCenter().x;
+    float dy = m_target.y - getCenter().y - m_sprite.getLocalBounds().height / 2 + 20;
+    float angle = atan2f(dy,dx);
+    m_sprite.move(cosf(angle)*dt*m_speed, sinf(angle)*dt*m_speed);
+    
+    if (DotDuration > 0) {
+        damage(m_dotDamage);
+        DotDuration--;
+        //todo (timer)
+    }
+    
+    if (slowDuration > 0) {
+        slowDuration--;
+    }
 }
 
 void Ghost::draw(sf::RenderWindow &window)
