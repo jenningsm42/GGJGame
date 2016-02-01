@@ -47,4 +47,5 @@ Bar& Bar::operator=(const Bar& other)
     m_barFill = other.m_barFill;
     m_maximum = other.m_maximum;
     m_current = other.m_current;
+	return *this;
 }

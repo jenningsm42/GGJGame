@@ -4,7 +4,7 @@
 BossGhost::BossGhost()
 {
 	m_speed = 65;
-	m_health = 400;
+	m_health = 225;
     m_type = 1;
 }
 
